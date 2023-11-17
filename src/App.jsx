@@ -12,7 +12,7 @@ import pc from './assets/CHART.png'
 import mdos from './assets/CHAT BOT.png'
 import contract from './assets/CONTRACT.png'
 import rocket from './assets/ROCKET.png'
-import fire from './assets/Imagen1.gif'
+import fire from './assets/image_processing20211213-25233-1wck2hl (1).gif'
 
 
 function App() {

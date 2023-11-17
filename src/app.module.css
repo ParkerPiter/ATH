@@ -41,7 +41,7 @@ body{
 .rocket {
     position: fixed;
     bottom: 0;
-    top:50%;
+    top:45%;
     left: 50%;
     transform: translate(-50%, 100%);
     animation: rocket 3s ease-in-out forwards;
@@ -69,22 +69,22 @@ body{
 .fire {
   position: fixed;
   /*top: 100%; Cambia 'top' por 'bottom'*/
-  bottom: -50%;
+  bottom: -45%;
   left: 50%;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 100%) rotate(180deg);
   animation: fire 3.4s ease-in-out forwards;
 }
 
 @keyframes fire {
   0% {
     opacity: 0;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%) rotate(180deg);
     width: 250px;
     height: 250px;
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(180deg);
     width: 250px;
     height: 250px;
   }
