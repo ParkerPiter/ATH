@@ -1,6 +1,5 @@
 import { useState,useEffect } from 'react'
 import Nav from './componentes/footerNav/NavFooter'
-
 //PNGs imports
 import styles from './app.module.css'
 import telegram from './assets/TELEGRAM.png'
@@ -13,12 +12,32 @@ import mdos from './assets/CHAT BOT.png'
 import contract from './assets/CONTRACT.png'
 import rocket from './assets/ROCKET.png'
 import fire from './assets/image_processing20211213-25233-1wck2hl (1).gif'
+// components imports
+import Alert from './componentes/alert/Alert'
 
 
 function App() {
 
   const [showRocket, setShowRocket] = useState(false);
   const [showFire, setShowFire] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+    const timerRocket = setTimeout(() => {
+      setShowAlert(true);
+    }, 200);
+  };
+
+  // const handleConfirmAction = () => {
+  //   console.log('Acción confirmada');
+  //   handleCloseAlert();
+  // };
+
+  const alertButtons = [
+    { name: 'YES', onClick: 'handleConfirmAction' },
+    { name: 'NO', onClick: handleCloseAlert },
+  ];
 
   useEffect(() => {
     const timerRocket = setTimeout(() => {
@@ -27,18 +46,26 @@ function App() {
     const timerFire = setTimeout(() => {
       setShowFire(true);
     }, 3000);
+    const timerAlert = setTimeout(() => {
+      setShowAlert(true);
+    }, 9000);
     return () => {
       clearTimeout(timerRocket);
       clearTimeout(timerFire);
+      clearTimeout(timerAlert);
     };
   }, []);
-
-
-
   return (
     <div className={styles.container}>
       {showRocket && <img src={rocket} alt="rocket" className={styles.rocket} />}
       {showFire && <img src={fire} alt="fire" className={styles.fire} />}
+      {showAlert && (
+        <Alert
+          message="¿ARE YOU READY TO BUY IN ATH?"
+          buttons={alertButtons}
+          // onClose={handleCloseAlert}
+        />
+      )}
       <div className={styles.containerMini}>
         <div>
           <img src={telegram} alt="#twitter" style={{ width: '80px', height: '45px' }} />
