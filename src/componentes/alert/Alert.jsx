@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //JPGs imports
 import alertImage from './Alerta.jpg'
 import './alert.css';
 
 const Alert = ({ message, buttons, onClose }) => {
+  // useEffect(() => {
+  //   // Reproducir el sonido cuando el componente se monta
+  //   const audio = new Audio(pum);
+  //   audio.play();
+
+  //   return () => {
+  //     // Limpiar el audio cuando el componente se desmonta
+  //     audio.pause();
+  //     audio.currentTime = 0;
+  //   };
+  // }, []); // Se ejecuta solo una vez al montar el componente
   return (
     <div className="alert-overlay">
       <div className="alert">
