@@ -1,0 +1,14 @@
+.quest{
+    background-color: white;
+    border-radius: 5px;
+    color: blue;
+    padding: 0 15px;
+}
+
+.userMessage {
+    text-align: right;
+}
+  
+.botMessage {
+    text-align: left;
+}
