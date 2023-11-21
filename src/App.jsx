@@ -1,4 +1,5 @@
 import { useState,useEffect } from 'react'
+import Modal from 'react-modal';
 import Nav from './componentes/footerNav/NavFooter'
 //PNGs imports
 import styles from './app.module.css'
@@ -15,6 +16,9 @@ import fire from './assets/image_processing20211213-25233-1wck2hl (1).gif'
 // components imports
 import Alert from './componentes/alert/Alert'
 import pum from './componentes/alert/pum.mp3' 
+import Chat from './componentes/chat/Chat'
+// Esto es necesario para la accesibilidad del modal
+Modal.setAppElement('#root');
 
 function App() {
   const [showRocket, setShowRocket] = useState(false);
@@ -22,6 +26,7 @@ function App() {
   const [showAlert, setShowAlert] = useState(false);
   const [showAlert2, setShowAlert2] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const playSound = () => {
     audio.load(); 
@@ -76,6 +81,14 @@ function App() {
     };
   }, [audio]);
 
+  const handleImageClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={styles.container}>
       {showRocket && <img src={rocket} alt="rocket" className={styles.rocket} />}
@@ -120,9 +133,25 @@ function App() {
           <p>CHART</p>
         </div>
         <div>
-          <img src={mdos} alt="" style={{ width: '80px', height: '45px' }} />
+          <img src={mdos} alt="" style={{ width: '80px', height: '45px' }} 
+            onClick={handleImageClick} />
           <p>CHAT BOT</p>
         </div>
+        <Modal
+          isOpen={isModalOpen}
+          onRequestClose={handleCloseModal}
+          contentLabel="Chat Modal"
+          style={{content:{backgroundColor: 'black', 
+          width: '300px', 
+          height: '550px',
+          position: 'fixed',
+          bottom: '0px', // Posiciona el modal en la parte inferior de la página
+          right: '0px',
+        }}}
+        >
+          <Chat />
+          <button onClick={handleCloseModal}>Cerrar chat</button>
+        </Modal>
       </div>
       <div className={styles.containerMini}>
         <div>
