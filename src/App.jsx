@@ -1,30 +1,36 @@
-import { useState,useEffect } from 'react'
-import Nav from './componentes/footerNav/NavFooter'
+import { useState, useEffect } from "react";
+import Nav from "./componentes/footerNav/NavFooter";
 //PNGs imports
-import styles from './app.module.css'
-import telegram from './assets/TELEGRAM.png'
-import twitter from './assets/TWITTER.png'
-import meme from './assets/MEME.png'
-import trash from './assets/BURN BIN.png'
-import game from './assets/GAME.png'
-import pc from './assets/CHART.png'
-import mdos from './assets/CHAT BOT.png'
-import contract from './assets/CONTRACT.png'
-import rocket from './assets/ROCKET.png'
-import fire from './assets/image_processing20211213-25233-1wck2hl (1).gif'
+import styles from "./app.module.css";
+import telegram from "./assets/TELEGRAM.png";
+import twitter from "./assets/TWITTER.png";
+import meme from "./assets/MEME.png";
+import trash from "./assets/BURN BIN.png";
+import game from "./assets/GAME.png";
+import pc from "./assets/CHART.png";
+import mdos from "./assets/CHAT BOT.png";
+import contract from "./assets/CONTRACT.png";
+import rocket from "./assets/ROCKET.png";
+import fire from "./assets/image_processing20211213-25233-1wck2hl (1).gif";
 // components imports
-import Alert from './componentes/alert/Alert'
-import pum from './componentes/alert/pum.mp3' 
+import Alert from "./componentes/alert/Alert";
+import pum from "./componentes/alert/pum.mp3";
 
 function App() {
   const [showRocket, setShowRocket] = useState(false);
   const [showFire, setShowFire] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [showAlert2, setShowAlert2] = useState(false);
+  const [showAlert3, setShowAlert3] = useState(false);
+  const [showAlert4, setShowAlert4] = useState(false);
+  const [showAlert5, setShowAlert5] = useState(false);
+  const [showAlert6, setShowAlert6] = useState(false);
+  const [showAlert7, setShowAlert7] = useState(false);
+  const [showAlert8, setShowAlert8] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
 
   const playSound = () => {
-    audio.load(); 
+    audio.load();
     audio.play();
   };
 
@@ -36,23 +42,61 @@ function App() {
     }, 200);
   };
 
-  const handleCloseAlert2 = () => {
-    setShowAlert2(false);
-  };
-
   const handleConfirmAction = () => {
-    console.log('Acción confirmada');
-    handleCloseAlert();
+    let counter = 1; // Inicia en 1 para mostrar la primera alerta inmediatamente
+    const intervalId = setInterval(() => {
+      switch (counter) {
+        case 1:
+          setShowAlert3(true);
+          playSound(); 
+          break;
+          case 2:
+            setShowAlert4(true);
+            playSound(); 
+            break;
+            case 3:
+              setShowAlert5(true);
+              playSound(); 
+              break;
+              case 4:
+                setShowAlert6(true);
+                playSound(); 
+                break;
+                case 5:
+                  setShowAlert7(true);
+                  playSound(); 
+                  break;
+                  case 6:
+                    setShowAlert8(true);
+                    playSound(); 
+          break;
+        default:
+          clearInterval(intervalId); // Detener la repetición después de que todas las alertas se han mostrado
+      }
+  
+      counter += 1;
+    }, 1000);
+  
+    setTimeout(() => {
+      clearInterval(intervalId);
+      setShowAlert2(false);
+      setShowAlert3(false);
+      setShowAlert4(false);
+      setShowAlert5(false);
+      setShowAlert6(false);
+      setShowAlert7(false);
+      setShowAlert8(false);
+    }, 8000);
   };
 
   const buttons1 = [
-    { name: 'YES', onClick: handleConfirmAction },
-    { name: 'NO', onClick: handleCloseAlert },
+    { name: "YES", onClick: handleConfirmAction },
+    { name: "NO", onClick: handleCloseAlert },
   ];
 
   const buttons2 = [
-    { name: 'YES', onClick: handleConfirmAction },
-    { name: 'YES', onClick: handleCloseAlert2 },
+    { name: "YES", onClick: handleConfirmAction },
+    { name: "YES", onClick: handleConfirmAction },
   ];
 
   useEffect(() => {
@@ -78,65 +122,115 @@ function App() {
 
   return (
     <div className={styles.container}>
-      {showRocket && <img src={rocket} alt="rocket" className={styles.rocket} />}
+      {showRocket && (
+        <img src={rocket} alt="rocket" className={styles.rocket} />
+      )}
       {showFire && <img src={fire} alt="fire" className={styles.fire} />}
       {showAlert && (
         <Alert
           message="¿ARE YOU READY TO BUY IN ATH?"
           buttons={buttons1}
-          // onClose={handleCloseAlert}
-        />
-      )}
+          position='center'
+          />
+          )}
       {showAlert2 && (
         <Alert
-          message="IS THAT A YES?"
-          buttons={buttons2}
-          // onClose={handleCloseAlert}
+        message="IS THAT A YES?"
+        buttons={buttons2}
+        position='center'
+        />
+        )}
+      {showAlert3 && (
+        <Alert
+        message="YES"
+        position='topLeft'
+        />
+        )}
+      {showAlert4 && (
+        <Alert
+        message="YES"
+        position='bottomRight'
+        />
+        )}
+      {showAlert5 && (
+        <Alert
+        message="YES"
+        position='bottomLeft'
+        />
+        )}
+      {showAlert6 && (
+        <Alert
+        message="YES"
+        position='topRight'
+        />
+        )}
+      {showAlert7 && (
+        <Alert
+        message="YES"
+        position='topLeftR'
+        />
+        )}
+      {showAlert8 && (
+        <Alert
+        message="YES"
+        position='bottomRightL'
         />
       )}
       <div className={styles.containerMini}>
         <div>
-          <img src={telegram} alt="#twitter" style={{ width: '80px', height: '45px' }} />
+          <img
+            src={telegram}
+            alt="#twitter"
+            style={{ width: "80px", height: "45px" }}
+          />
           <p>TELEGRAM</p>
         </div>
         <div>
-          <img src={twitter} alt="#tele" style={{ width: '80px', height: '45px' }} />
+          <img
+            src={twitter}
+            alt="#tele"
+            style={{ width: "80px", height: "45px" }}
+          />
           <p>TWITTER</p>
         </div>
       </div>
       <div className={styles.containerMini}>
         <div>
-          <img src={meme} alt=""  style={{ width: '80px', height: '45px' }}/>
+          <img src={meme} alt="" style={{ width: "80px", height: "45px" }} />
           <p>MEMES</p>
         </div>
         <div>
-          <img src={contract} alt="" style={{ width: '85px', height: '45px' }}/>
+          <img
+            src={contract}
+            alt=""
+            style={{ width: "85px", height: "45px" }}
+          />
           <p>MSDOS</p>
         </div>
       </div>
       <div className={styles.containerMini}>
         <div>
-          <img src={pc} alt=""  style={{ width: '80px', height: '45px' }}/>
+          <img src={pc} alt="" style={{ width: "80px", height: "45px" }} />
           <p>CHART</p>
         </div>
         <div>
-          <img src={mdos} alt="" style={{ width: '80px', height: '45px' }} />
+          <img src={mdos} alt="" style={{ width: "80px", height: "45px" }} />
           <p>CHAT BOT</p>
         </div>
       </div>
       <div className={styles.containerMini}>
         <div>
-          <img src={trash} alt=""  style={{ width: '80px', height: '45px' }}/>
+          <img src={trash} alt="" style={{ width: "80px", height: "45px" }} />
           <p>TOKEN BURN</p>
         </div>
         <div>
-          <img src={game} alt="" style={{ width: '80px', height: '45px' }} />
+          <img src={game} alt="" style={{ width: "80px", height: "45px" }} />
           <p>GAMES</p>
         </div>
       </div>
-        {/* <Nav className={styles.Nav}></Nav> */}
+      {/* <Nav className={styles.Nav}></Nav> */}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
