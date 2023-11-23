@@ -109,31 +109,31 @@ function App() {
       )}
       <div className={styles.containerMini}>
         <div>
-          <img src={telegram} alt="#twitter" style={{ width: '80px', height: '45px' }} />
+          <img src={telegram} alt="#twitter" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
           <p>TELEGRAM</p>
         </div>
         <div>
-          <img src={twitter} alt="#tele" style={{ width: '80px', height: '45px' }} />
+          <img src={twitter} alt="#tele" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
           <p>TWITTER</p>
         </div>
       </div>
       <div className={styles.containerMini}>
         <div>
-          <img src={meme} alt=""  style={{ width: '80px', height: '45px' }}/>
+          <img src={meme} alt=""  style={{ width: '80px', height: '55px', marginBottom:'0px' }}/>
           <p>MEMES</p>
         </div>
         <div>
-          <img src={contract} alt="" style={{ width: '85px', height: '45px' }}/>
+          <img src={contract} alt="" style={{ width: '80px', height: '55px', marginBottom:'0px'}}/>
           <p>MSDOS</p>
         </div>
       </div>
       <div className={styles.containerMini}>
         <div>
-          <img src={pc} alt=""  style={{ width: '80px', height: '45px' }}/>
+          <img src={pc} alt=""  style={{width: '80px', height: '55px', marginBottom:'0px'}}/>
           <p>CHART</p>
         </div>
         <div>
-          <img src={mdos} alt="" style={{ width: '80px', height: '45px' }} 
+          <img src={mdos} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} 
             onClick={handleImageClick} />
           <p>CHAT BOT</p>
         </div>
@@ -141,25 +141,29 @@ function App() {
           isOpen={isModalOpen}
           onRequestClose={handleCloseModal}
           contentLabel="Chat Modal"
-          style={{content:{backgroundColor: 'black', 
-          width: '300px', 
-          height: '550px',
-          position: 'fixed',
-          bottom: '0px', // Posiciona el modal en la parte inferior de la página
-          right: '0px',
-        }}}
+          style={{
+            content: {
+              backgroundColor: 'black',
+              width: '375px',
+              height: '550px',
+              left:'880px',
+            },
+            overlay: {
+              backgroundColor: 'transparent'
+            }
+          }}
         >
           <Chat />
-          <button onClick={handleCloseModal}>Cerrar chat</button>
+          <button className={styles.button} onClick={handleCloseModal}>X Cerrar chat</button>
         </Modal>
       </div>
       <div className={styles.containerMini}>
         <div>
-          <img src={trash} alt=""  style={{ width: '80px', height: '45px' }}/>
+          <img src={trash} alt=""  style={{width: '80px', height: '55px', marginBottom:'0px'}}/>
           <p>TOKEN BURN</p>
         </div>
         <div>
-          <img src={game} alt="" style={{ width: '80px', height: '45px' }} />
+          <img src={game} alt="" style={{ width: '80px', height: '55px', marginBottom:'0px'}} />
           <p>GAMES</p>
         </div>
       </div>
