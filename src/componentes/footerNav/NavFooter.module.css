@@ -13,16 +13,26 @@
     height: 24px;
     padding-right: 4px ;
     text-align: right;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    border-left: 2px solid rgb(188, 185, 185);
-    border-top: 2px solid rgb(188, 185, 185);
+    border-right: 2px solid rgb(29, 28, 28);
+    border-bottom: 2px solid rgb(29, 28, 28);
+    border-left: 2px solid rgb(142, 141, 141);
+    border-top: 2px solid rgb(142, 141, 141);
 }
 .win{
     position: relative;
     padding-top: 30px;
 }
 .clock{
-    margin-top: -1px;
+    font-size: 20px;
+    position: relative;
+    margin-top: 1px;
+    width: 80px;
+    height: 24px;
+    padding-right: 4px ;
+    text-align: center;
+    border-right: 2px solid rgb(142, 141, 141);
+    border-bottom: 2px solid rgb(142, 141, 141);
+    border-left: 2px solid rgb(29, 28, 28);
+    border-top: 2px solid rgb(29, 28, 28);
 
 }
