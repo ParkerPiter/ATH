@@ -11,8 +11,8 @@ const Alert = ({ message, buttons, position }) => {
         <div className={`alert-content ${position}`}>
           <p className='helloThere'>Hello there.....</p>
           <img src={alertImage} alt='' />
-          <div className="overlay-text">
             <p className='message'>{message}</p>
+          <div className="overlay-text">
             <div className="alert-actions">
               {buttons?.map((button, index) => (
                 <button className='btn' key={index} onClick={() => button.onClick()}>
