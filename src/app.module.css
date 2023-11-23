@@ -31,6 +31,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 10px;
 }
 
 .containerMini div p {
@@ -88,4 +89,36 @@ body{
     width: 250px;
     height: 250px;
   }
+}
+
+.button{
+  margin-top: 2px;
+  border-radius: 2px;
+  text-align: center;
+  width: 100%;
+  background-color: red;
+}
+
+/* SCROLL BAR*/
+/* Esto aplica el estilo a todas las barras de desplazamiento */
+::-webkit-scrollbar {
+  width: 15px;  
+  background-color: white;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(173, 173, 173); 
+  border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(173, 173, 173); 
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(173, 173, 173); 
 }
