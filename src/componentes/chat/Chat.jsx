@@ -31,7 +31,7 @@ const Chat = () =>{
     <div className={style.container}>
         <h3>Opciones (presiona un numero para obtener respuesta):</h3>
         <p className={style.quest}>1.Descubre qué es ATH Token</p>
-        <p className={style.quest}>2.cómo puedes obtener ATH Tokens</p>
+        <p className={style.quest}>2.Cómo puedes obtener ATH Tokens</p>
         <p className={style.quest}>3.Infórmate sobre el proyecto ATH y cómo puedes contribuir</p>
         <ul className={style.chat}>
             {messages.map((message, index) => (
