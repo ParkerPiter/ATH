@@ -1,66 +1,75 @@
 .alert-overlay {
   position: fixed;
-  top: 0;
+  margin-top: -130px;
+  top: 0px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 120%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.alert img {
+  width: 50%;
+  margin: 35px 0;
+}
 .alert {
   position: relative;
   background: transparent;
 }
-
-.alert-content.center {
-  margin-right: -450px;
-  position: relative;
+.aler-content{
+  position: relative; 
 }
-.alert-content.topLeft {
+.center {
+  margin-right: -450px;
+  padding-left: -400px;
+}
+.topLeft {
   margin-right: -280px;
   margin-top: -60px;
   position: relative;
 }
-.alert-content.bottomRight {
+.bottomRight {
   margin-right: -660px;
   margin-bottom: -20px;
   position: relative;
 }
-.alert-content.bottomLeft {
+.bottomLeft {
   margin-right: -190px;
   margin-bottom: -90px;
   position: relative;
 }
-.alert-content.topRight {
+.topRight {
   margin-right: -230px;
   margin-top: -20px;
   position: relative;
 }
-.alert-content.topLeftR {
+.topLeftR {
   margin-right: -897px;
   margin-top: -99px;
   position: relative;
 }
-.alert-content.bottomRightL {
+.bottomRightL {
   margin-right: -790px;
   margin-bottom: -71px;
   position: relative;
 }
 
 .overlay-text {
-  margin-left: -230px;
+  /* margin-left: -230px; */
   color: #000;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
   text-align: center;
 }
 .message{
-  margin-bottom: 40px;
+  color: #000;
+  text-align: center;
+  margin-top: -200px;
+  margin-left: -459px;
 }
 
 .overlay-text p {
@@ -70,8 +79,8 @@
 .alert-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
-  margin-left: 30px;
+  margin-top: 25px;
+  margin-left: 50px;
 }
 .btn {
   background-color: #8f8a89;

@@ -12,7 +12,9 @@ import contract from "../../assets/CONTRACT.png";
 import rocket from "../../assets/ROCKET.png";
 import fire from "../../assets/image_processing20211213-25233-1wck2hl (1).gif";
 // components imports
-import Alert from "../../componentes/alert/Alert";
+import Alert from "../alert/Alert";
+import Modal from "../modal/Modal";
+//Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
 
 function Main() {
@@ -26,6 +28,7 @@ function Main() {
   const [showAlert6, setShowAlert6] = useState(false);
   const [showAlert7, setShowAlert7] = useState(false);
   const [showAlert8, setShowAlert8] = useState(false);
+  const [showModalToken, setShowModalToken] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
 
   const playSound = () => {
@@ -120,6 +123,10 @@ function Main() {
     };
   }, [audio]);
 
+  const handleToken = () => {
+    setShowModalToken((elemento) => !elemento)
+  }
+
   return (
     <div>
       <div className={styles.container}>
@@ -147,6 +154,7 @@ function Main() {
         {showAlert6 && <Alert message="YES" position="topRight" />}
         {showAlert7 && <Alert message="YES" position="topLeftR" />}
         {showAlert8 && <Alert message="YES" position="bottomRightL" />}
+        {showModalToken && <Modal messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
         <div className={styles.containerMini}>
           <div>
             <img
@@ -191,7 +199,7 @@ function Main() {
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={trash} alt="" style={{ width: "80px", height: "45px" }} />
+            <img src={trash} alt="" style={{ width: "80px", height: "45px" }} onClick={handleToken} />
             <p>TOKEN BURN</p>
           </div>
           <div>
