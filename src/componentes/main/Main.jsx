@@ -21,13 +21,15 @@ import off from "../../assets/musicoff.png";
 // components imports
 import Alert from "../alert/Alert";
 import Medal from "../modal/Modal";
+import Contract from "../contract/contract"
+import Chat from "../chat/Chat";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
-import musica from "../../componentes/alert/musica.mp3"
-import Chat from "../chat/Chat";
+import useSound from 'use-sound'
+import musica from "../../assets/musica.mp3"
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
-import useSound from 'use-sound'
+
 
 
 function Main() {
@@ -44,9 +46,10 @@ function Main() {
   const [showModalToken, setShowModalToken] = useState(false);
   const [showModalMeme, setShowModalMeme] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
-  const [play, { stop }] = useSound('../alert/pum.mp3');
+  const [play, { stop }] = useSound(musica);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showContract, setShowContract] = useState(false);
 
   const handlePlay = () => {
     if (!isPlaying) {
@@ -163,6 +166,11 @@ function Main() {
   const handleToken = () => {
     setShowModalToken((elemento) => !elemento)
   }
+
+  const handleContract = () => {
+    setShowContract((elemento) => !elemento)
+  }
+
   const handleMeme = () => {
     setShowModalMeme((elemento) => !elemento)
   }
@@ -171,6 +179,7 @@ function Main() {
     meme2,
     meme3
   ]
+
   return (
     <div>
       <div className={styles.container}>
@@ -198,6 +207,7 @@ function Main() {
         {showAlert6 && <Alert message="YES" position="topRight" />}
         {showAlert7 && <Alert message="YES" position="topLeftR" />}
         {showAlert8 && <Alert message="YES" position="bottomRightL" />}
+        {showContract && <Contract/>}
         {showModalToken && <Medal textB='Burn tokens' messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
         {showModalMeme && <Medal colorM='colorMSP' messageM='.' token='.' memes={memes}/>}
         <div className={styles.containerMini}>
@@ -232,6 +242,7 @@ function Main() {
               src={contract}
               alt=""
               style={{width: '80px', height: '55px', marginBottom:'0px'}}
+              onClick={handleContract}
             />
             <p>MSDOS</p>
           </div>
