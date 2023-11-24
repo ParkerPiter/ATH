@@ -12,11 +12,15 @@ import mdos from "../../assets/CHAT BOT.png";
 import contract from "../../assets/CONTRACT.png";
 import rocket from "../../assets/ROCKET.png";
 import fire from "../../assets/image_processing20211213-25233-1wck2hl (1).gif";
+import on from "../../assets/musicon.png";
+import off from "../../assets/musicoff.png";
 // components imports
 import Alert from "../../componentes/alert/Alert";
 import pum from "../../componentes/alert/pum.mp3";
+import musica from "../../componentes/alert/musica.mp3"
 import Chat from "../chat/Chat";
 import Modal from 'react-modal';
+import useSound from 'use-sound'
 Modal.setAppElement('#root');
 
 function Main() {
@@ -31,7 +35,23 @@ function Main() {
   const [showAlert7, setShowAlert7] = useState(false);
   const [showAlert8, setShowAlert8] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
+  const [play, { stop }] = useSound('../alert/pum.mp3');
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlePlay = () => {
+    if (!isPlaying) {
+      play();
+      setIsPlaying(true);
+    }
+  };
+
+  const handleStop = () => {
+    if (isPlaying) {
+      stop();
+      setIsPlaying(false);
+    }
+  };
 
   const playSound = () => {
     audio.load();
@@ -236,6 +256,11 @@ function Main() {
             <p>GAMES</p>
           </div>
         </div>
+      </div>
+      <div>
+        <img className={`${styles.audioOn} ${styles.on1}`} src={on} alt="" onClick={handlePlay} />
+        <img className={`${styles.audioOn} ${styles.off}`}src={off} alt="" onClick={handleStop} />
+        <img className={`${styles.audioOn} ${styles.on2}`} src={on} alt="" onClick={handlePlay}/>
       </div>
     </div>
   );
