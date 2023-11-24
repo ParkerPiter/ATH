@@ -16,14 +16,15 @@ import on from "../../assets/musicon.png";
 import off from "../../assets/musicoff.png";
 // components imports
 import Alert from "../alert/Alert";
-import Modal from "../modal/Modal";
+import Medal from "../modal/Modal";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
 import musica from "../../componentes/alert/musica.mp3"
 import Chat from "../chat/Chat";
 import Modal from 'react-modal';
-import useSound from 'use-sound'
 Modal.setAppElement('#root');
+import useSound from 'use-sound'
+
 
 function Main() {
   const [showRocket, setShowRocket] = useState(false);
@@ -148,7 +149,6 @@ function Main() {
     };
   }, [audio]);
 
-<<<<<<< HEAD
   const handleImageClick = () => {
     setIsModalOpen(true);
   };
@@ -156,11 +156,10 @@ function Main() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-=======
   const handleToken = () => {
     setShowModalToken((elemento) => !elemento)
   }
->>>>>>> 5665415b4ff31623a9b25b7958012467f15834e1
+
 
   return (
     <div>
@@ -189,7 +188,7 @@ function Main() {
         {showAlert6 && <Alert message="YES" position="topRight" />}
         {showAlert7 && <Alert message="YES" position="topLeftR" />}
         {showAlert8 && <Alert message="YES" position="bottomRightL" />}
-        {showModalToken && <Modal messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
+        {showModalToken && <Medal messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
         <div className={styles.containerMini}>
           <Link to='https://web.telegram.org/a/'>
             <div>
@@ -258,11 +257,7 @@ function Main() {
         </div>
         <div className={styles.containerMini}>
           <div>
-<<<<<<< HEAD
-            <img src={trash} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
-=======
-            <img src={trash} alt="" style={{ width: "80px", height: "45px" }} onClick={handleToken} />
->>>>>>> 5665415b4ff31623a9b25b7958012467f15834e1
+            <img src={trash} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}}onClick={handleToken} />
             <p>TOKEN BURN</p>
           </div>
           <div>
