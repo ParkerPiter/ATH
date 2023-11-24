@@ -51,21 +51,20 @@ body {
   0% {
     opacity: 0;
     transform: translate(-50%, 100%);
-    width: 450px;
-    height: 600px;
+    width: 400px;
+    height: 750px;
   }
   100% {
     opacity: 1;
     transform: translate(-50%, -50%);
-    width: 450px;
-    height: 800px;
+    width: 400px;
+    height: 750px;
   }
 }
 /* Fire animation */
 .fire {
   position: fixed;
-  /*top: 100%; Cambia 'top' por 'bottom'*/
-  bottom: -45%;
+  bottom: -52%;
   left: 50%;
   transform: translate(-50%, 100%) rotate(180deg);
   animation: fire 3.4s ease-in-out forwards;
@@ -84,4 +83,58 @@ body {
     width: 250px;
     height: 250px;
   }
+}
+
+.button{
+  margin-top: 2px;
+  border-radius: 2px;
+  text-align: center;
+  width: 100%;
+  background-color: red;
+}
+
+/* SCROLL BAR*/
+/* Esto aplica el estilo a todas las barras de desplazamiento */
+::-webkit-scrollbar {
+  width: 15px;  
+  background-color: white;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(173, 173, 173); 
+  border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(173, 173, 173); 
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(173, 173, 173); 
+}
+
+/*Icono de audio*/
+.audioOn {
+  position: absolute;
+  right: 0;
+}
+
+.on1 {
+  top: 575px;
+  margin-right: 15px;
+}
+.on2 {
+  top: 575px;
+  right: 55px;
+}
+
+.off{
+  top: 575px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
 }
