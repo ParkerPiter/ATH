@@ -15,7 +15,7 @@ const Chat = () =>{
 
   const handleInputSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch('http://localhost:3000/chat', {
+    const response = await fetch('https://ath-server.vercel.app/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -5,6 +5,8 @@
     justify-content: space-between;
     padding: 4px 15px 0px 15px;
     color: black;
+    position: relative; /* o absolute, fixed, o sticky */
+    z-index: 1000; /* cualquier número alto */
 }
 .start{
     position: relative;

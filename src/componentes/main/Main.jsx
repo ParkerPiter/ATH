@@ -17,13 +17,15 @@ import off from "../../assets/musicoff.png";
 // components imports
 import Alert from "../alert/Alert";
 import Medal from "../modal/Modal";
+import Contract from "../contract/contract"
+import Chat from "../chat/Chat";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
-import musica from "../../componentes/alert/musica.mp3"
-import Chat from "../chat/Chat";
+import useSound from 'use-sound'
+import musica from "../../assets/musica.mp3"
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
-import useSound from 'use-sound'
+
 
 
 function Main() {
@@ -39,9 +41,10 @@ function Main() {
   const [showAlert8, setShowAlert8] = useState(false);
   const [showModalToken, setShowModalToken] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
-  const [play, { stop }] = useSound('../alert/pum.mp3');
+  const [play, { stop }] = useSound(musica);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showContract, setShowContract] = useState(false);
 
   const handlePlay = () => {
     if (!isPlaying) {
@@ -160,6 +163,9 @@ function Main() {
     setShowModalToken((elemento) => !elemento)
   }
 
+  const handleContract = () => {
+    setShowContract((elemento) => !elemento)
+  }
 
   return (
     <div>
@@ -189,6 +195,7 @@ function Main() {
         {showAlert7 && <Alert message="YES" position="topLeftR" />}
         {showAlert8 && <Alert message="YES" position="bottomRightL" />}
         {showModalToken && <Medal messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
+        {showContract && <Contract/>}
         <div className={styles.containerMini}>
           <Link to='https://web.telegram.org/a/'>
             <div>
@@ -221,6 +228,7 @@ function Main() {
               src={contract}
               alt=""
               style={{width: '80px', height: '55px', marginBottom:'0px'}}
+              onClick={handleContract}
             />
             <p>MSDOS</p>
           </div>

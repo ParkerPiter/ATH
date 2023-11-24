@@ -25,6 +25,7 @@ body {
 .containerMini {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 10px;
 }
 
 .containerMini div {
@@ -51,20 +52,20 @@ body {
   0% {
     opacity: 0;
     transform: translate(-50%, 100%);
-    width: 400px;
-    height: 750px;
+    width: 350px;
+    height: 700px;
   }
   100% {
     opacity: 1;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 750px;
+    width: 350px;
+    height: 700px;
   }
 }
 /* Fire animation */
 .fire {
   position: fixed;
-  bottom: -52%;
+  bottom: -50%;
   left: 50%;
   transform: translate(-50%, 100%) rotate(180deg);
   animation: fire 3.4s ease-in-out forwards;
