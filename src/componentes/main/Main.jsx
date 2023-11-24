@@ -268,7 +268,7 @@ function Main() {
                 backgroundColor: 'black',
                 width: '375px',
                 height: '550px',
-                left:'895px',
+                left:'870px',
               },
               overlay: {
                 backgroundColor: 'transparent',
