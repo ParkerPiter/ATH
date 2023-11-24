@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 //PNGs imports
+import imgModal from '../modal/modalEnBlanco.jpg';
+import meme1 from '../../assets/meme1.jpg';
+import meme2 from '../../assets/meme2.jpg';
+import meme3 from '../../assets/meme3.jpg';
 import styles from "../../app.module.css";
 import telegram from "../../assets/TELEGRAM.png";
 import twitter from "../../assets/TWITTER.png";
@@ -40,6 +44,7 @@ function Main() {
   const [showAlert7, setShowAlert7] = useState(false);
   const [showAlert8, setShowAlert8] = useState(false);
   const [showModalToken, setShowModalToken] = useState(false);
+  const [showModalMeme, setShowModalMeme] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
   const [play, { stop }] = useSound(musica);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -104,7 +109,6 @@ function Main() {
         default:
           clearInterval(intervalId); // Detener la repetición después de que todas las alertas se han mostrado
       }
-
       counter += 1;
     }, 1000);
 
@@ -130,7 +134,7 @@ function Main() {
     { name: "YES", onClick: handleConfirmAction },
     { name: "YES", onClick: handleConfirmAction },
   ];
-
+  
   useEffect(() => {
     const timerRocket = setTimeout(() => {
       setShowRocket(true);
@@ -167,6 +171,15 @@ function Main() {
     setShowContract((elemento) => !elemento)
   }
 
+  const handleMeme = () => {
+    setShowModalMeme((elemento) => !elemento)
+  }
+  const memes = [
+    meme1,
+    meme2,
+    meme3
+  ]
+
   return (
     <div>
       <div className={styles.container}>
@@ -194,8 +207,9 @@ function Main() {
         {showAlert6 && <Alert message="YES" position="topRight" />}
         {showAlert7 && <Alert message="YES" position="topLeftR" />}
         {showAlert8 && <Alert message="YES" position="bottomRightL" />}
-        {showModalToken && <Medal messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
         {showContract && <Contract/>}
+        {showModalToken && <Medal textB='Burn tokens' messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
+        {showModalMeme && <Medal colorM='colorMSP' messageM='.' token='.' memes={memes}/>}
         <div className={styles.containerMini}>
           <Link to='https://web.telegram.org/a/'>
             <div>
@@ -220,7 +234,7 @@ function Main() {
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={meme} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
+            <img src={meme} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} onClick={handleMeme}/>
             <p>MEMES</p>
           </div>
           <div>
@@ -249,18 +263,19 @@ function Main() {
             contentLabel="Chat Modal"
             style={{
               content: {
+                backgroundImage: `url(${imgModal})`,
+                backgroundSize:'495px 610px',
                 backgroundColor: 'black',
                 width: '375px',
                 height: '550px',
-                left:'880px',
+                left:'895px',
               },
               overlay: {
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
               }
             }}
-          >
+            >
           <Chat />
-          {/* <button className={styles.button} onClick={handleCloseModal}>X Cerrar chat</button> */}
         </Modal>
         </div>
         <div className={styles.containerMini}>

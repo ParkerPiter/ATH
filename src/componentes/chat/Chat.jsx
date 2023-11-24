@@ -25,17 +25,21 @@ const Chat = () =>{
     const data = await response.json();
     setMessages([...messages, { text: input, from: 'user' }, { text: data.message, from: 'bot' }]);
     setInput('');
-};
+  };
 
   return (
     <div className={style.container}>
-        <h3>Opciones (presiona un numero para obtener respuesta):</h3>
+        <h3 className={style.barraGris}></h3>
+        <h3 className={style.barraAzul}></h3>
+        <h3 className={style.barraGris2}></h3>
+  <h3 className={style.barraGris3}></h3>
+        <h3 className={style.firstOp}>Opciones (presiona un numero para obtener respuesta):</h3>
         <p className={style.quest}>1.Descubre qué es ATH Token</p>
         <p className={style.quest}>2.Cómo puedes obtener ATH Tokens</p>
         <p className={style.quest}>3.Infórmate sobre el proyecto ATH y cómo puedes contribuir</p>
         <ul className={style.chat}>
             {messages.map((message, index) => (
-                <li key={index} className={message.from === 'user' ? style.userMessage : style.botMessage}>
+              <li key={index} className={message.from === 'user' ? style.userMessage : style.botMessage}>
                 {message.from === 'user' ? 
                     <>
                     <span>{message.from}:</span>

@@ -4,7 +4,6 @@ import alertImage from './Alerta.jpg'
 import './alert.css';
 
 const Alert = ({ message, buttons, position }) => {
-
   return (
     <div className="alert-overlay">
       <div className="alert">
