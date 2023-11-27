@@ -18,8 +18,8 @@ import mdos from "../../assets/CHAT BOT.png";
 import contract from "../../assets/CONTRACT.png";
 import rocket from "../../assets/ROCKET.png";
 import fire from "../../assets/image_processing20211213-25233-1wck2hl (1).gif";
-import on from "../../assets/musicon.png";
-import off from "../../assets/musicoff.png";
+// import on from "../../assets/musicon.png";
+// import off from "../../assets/musicoff.png";
 // components imports
 import Alert from "../alert/Alert";
 import Medal from "../modal/Modal";
@@ -27,8 +27,8 @@ import Contract from "../contract/contract"
 import Chat from "../chat/Chat";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
-import useSound from 'use-sound'
-import musica from "../../assets/musica.mp3"
+// import useSound from 'use-sound'
+// import musica from "../../assets/musica.mp3"
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
@@ -48,24 +48,24 @@ function Main() {
   const [showModalToken, setShowModalToken] = useState(false);
   const [showModalMeme, setShowModalMeme] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
-  const [play, { stop }] = useSound(musica);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [play, { stop }] = useSound(musica);
+  // const [isPlaying, setIsPlaying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showContract, setShowContract] = useState(false);
 
-  const handlePlay = () => {
-    if (!isPlaying) {
-      play();
-      setIsPlaying(true);
-    }
-  };
+  // const handlePlay = () => {
+  //   if (!isPlaying) {
+  //     play();
+  //     setIsPlaying(true);
+  //   }
+  // };
 
-  const handleStop = () => {
-    if (isPlaying) {
-      stop();
-      setIsPlaying(false);
-    }
-  };
+  // const handleStop = () => {
+  //   if (isPlaying) {
+  //     stop();
+  //     setIsPlaying(false);
+  //   }
+  // };
 
   const playSound = () => {
     audio.load();
@@ -288,14 +288,9 @@ function Main() {
             <img src={game} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
             <p>GAMES</p>
           </div>
-          <button className="btn btn-primary" >Soy un boton</button>
+          {/* <button className="btn btn-primary" >Soy un boton</button> */}
         </div>
         
-      </div>
-      <div>
-        <img className={`${styles.audioOn} ${styles.on1}`} src={on} alt="" onClick={handlePlay} />
-        <img className={`${styles.audioOn} ${styles.off}`}src={off} alt="" onClick={handleStop} />
-        <img className={`${styles.audioOn} ${styles.on2}`} src={on} alt="" onClick={handlePlay}/>
       </div>
     </div>
   );
