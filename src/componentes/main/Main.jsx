@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
+// import win from '../../../windows-95-ui-kit/css/w95.css?inline'
+import '../../../windows-95-ui-kit/css/w95.css';
 //PNGs imports
 import imgModal from '../modal/modalEnBlanco.jpg';
 import meme1 from '../../assets/meme1.jpg';
@@ -263,12 +265,11 @@ function Main() {
             contentLabel="Chat Modal"
             style={{
               content: {
-                backgroundImage: `url(${imgModal})`,
                 backgroundSize:'495px 610px',
                 backgroundColor: 'black',
                 width: '375px',
                 height: '550px',
-                left:'895px',
+                left:'870px',
               },
               overlay: {
                 backgroundColor: 'transparent',
@@ -287,7 +288,9 @@ function Main() {
             <img src={game} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
             <p>GAMES</p>
           </div>
+          <button className="btn btn-primary" >Soy un boton</button>
         </div>
+        
       </div>
       <div>
         <img className={`${styles.audioOn} ${styles.on1}`} src={on} alt="" onClick={handlePlay} />
