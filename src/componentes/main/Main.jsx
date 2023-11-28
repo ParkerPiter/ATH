@@ -218,9 +218,9 @@ function Main() {
               <img
                 src={telegram}
                 alt="#twitter"
-                style={{width: '80px', height: '55px', marginBottom:'0px'}}
+                style={{width: '90px', height: '65px', marginBottom:'0px'}}
               />
-              <p style={{color: 'white'}}>TELEGRAM</p>
+              <p style={{color: 'white', fontSize: '7px' }}>TELEGRAM</p>
             </div>
           </Link> 
           <Link to='https://twitter.com/'>
@@ -228,36 +228,36 @@ function Main() {
               <img
                 src={twitter}
                 alt="#tele"
-                style={{width: '80px', height: '55px', marginBottom:'0px'}}
+                style={{width: '90px', height: '65px', marginBottom:'0px'}}
               />
-              <p style={{color: 'white'}} >TWITTER</p>
+              <p style={{color: 'white', fontSize: '7px' }} >TWITTER</p>
             </div>
           </Link>
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={meme} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} onClick={handleMeme}/>
-            <p>MEMES</p>
+            <img src={meme} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleMeme}/>
+            <p style={{color: 'white', fontSize: '7px' }} >MEMES</p>
           </div>
           <div>
             <img
               src={contract}
               alt=""
-              style={{width: '80px', height: '55px', marginBottom:'0px'}}
+              style={{width: '90px', height: '65px', marginBottom:'0px'}}
               onClick={handleContract}
             />
-            <p>MSDOS</p>
+            <p style={{color: 'white', fontSize: '7px' }}>MSDOS</p>
           </div>
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={pc} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
-            <p>CHART</p>
+            <img src={pc} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
+            <p style={{color: 'white', fontSize: '7px' }}>CHART</p>
           </div>
           <div>
-            <img src={mdos} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}}
+            <img src={mdos} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}}
             onClick={handleImageClick} />
-            <p>CHAT BOT</p>
+            <p style={{color: 'white', fontSize: '7px' }}>CHAT BOT</p>
           </div>
           <Modal
             isOpen={isModalOpen}
@@ -265,10 +265,8 @@ function Main() {
             contentLabel="Chat Modal"
             style={{
               content: {
-                backgroundSize:'495px 610px',
-                backgroundColor: 'black',
-                width: '375px',
-                height: '550px',
+                background: 'transparent',
+                border: 'none',
                 left:'870px',
               },
               overlay: {
@@ -281,14 +279,14 @@ function Main() {
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={trash} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}}onClick={handleToken} />
-            <p>TOKEN BURN</p>
+            <img src={trash} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleToken} />
+            <p style={{color: 'white', fontSize: '7px' }}>TOKEN BURN</p>
           </div>
           <div>
-            <img src={game} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
-            <p>GAMES</p>
+            <img src={game} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
+            <p style={{color: 'white', fontSize: '7px' }}>GAMES</p>
           </div>
-          <button className="btn btn-primary" >Soy un boton</button>
+          {/* <button className="btn btn-primary" >Soy un boton</button> */}
         </div>
         
       </div>
