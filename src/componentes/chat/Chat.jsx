@@ -5,7 +5,7 @@ import botAvatar from '../../assets/Imagen1.png'
 
 const Chat = () =>{
     const [messages, setMessages] = useState([{
-        text: `¡Bienvenidos a ATH, la comunidad de la web3 donde comprar en ATH no va a ser un error! Estamos comprometidos a hacer todo lo necesario para que este proyecto nos lleve a todos al éxito, incluido a nuestro pobre vagabundo que compro en ATH el pasado bullrun. ¿Cómo puedo asistirte hoy?`,
+        text: '¡Bienvenidos a ATH, la comunidad de la web3 donde comprar en ATH no va a ser un error! Estamos comprometidos a hacer todo lo necesario para que este proyecto nos lleve a todos al éxito, incluido a nuestro pobre vagabundo que compro en ATH el pasado bullrun. ¿Cómo puedo asistirte hoy?',
         from: 'bot'
     }]);
     const [input, setInput] = useState('');
@@ -16,7 +16,7 @@ const Chat = () =>{
 
   const handleInputSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch('http://localhost:3000/chat', {
+    const response = await fetch('ath-server.vercel.app/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const Chat = () =>{
   };
 
   return (
-    <div className='card card-tertiary container'>
+    <div className='card card-tertiary container-chat'>
       <div className='card-header'>
         <p>ATH CHAT</p>
       </div>
@@ -57,10 +57,6 @@ const Chat = () =>{
                   </li>
               ))}
           </ul>
-        <form className='form' onSubmit={handleInputSubmit}>
-          <input className='input' type="text" value={input} onChange={handleInputChange} />
-          <button className='btn btn-primary' type="submit">Enviar</button>
-        </form>
       </div>
     </div>
   )

@@ -1,28 +1,41 @@
-.footer{
-    background-color: gray;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 4px 15px 0px 15px;
-    color: black;
-    position: relative; /* o absolute, fixed, o sticky */
-    z-index: 1000; /* cualquier número alto */
+.footer {
+  background-color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4px 15px 0px 15px;
+  color: black;
+  position: relative; /* o absolute, fixed, o sticky */
+  z-index: 1000; /* cualquier número alto */
 }
-.start{
-    position: relative;
-    margin-top: -34px;
-    width: 80px;
-    height: 24px;
-    padding-right: 4px ;
-    text-align: right;
-    border-right: 2px solid rgb(29, 28, 28);
-    border-bottom: 2px solid rgb(29, 28, 28);
-    border-left: 2px solid rgb(142, 141, 141);
-    border-top: 2px solid rgb(142, 141, 141);
+.start {
+  position: relative;
+  margin-top: -34px;
+  width: 80px;
+  height: 24px;
+  padding-right: 4px;
+  text-align: right;
+  border-right: 2px solid rgb(29, 28, 28);
+  border-bottom: 2px solid rgb(29, 28, 28);
+  border-left: 2px solid rgb(142, 141, 141);
+  border-top: 2px solid rgb(142, 141, 141);
 }
-.win{
-    position: relative;
-    padding-top: 30px;
+.win {
+  position: relative;
+  padding-top: 30px;
+}
+.clock {
+  font-size: 20px;
+  position: relative;
+  margin-top: 1px;
+  width: 80px;
+  height: 24px;
+  padding-right: 4px;
+  text-align: center;
+  border-right: 2px solid rgb(142, 141, 141);
+  border-bottom: 2px solid rgb(142, 141, 141);
+  border-left: 2px solid rgb(29, 28, 28);
+  border-top: 2px solid rgb(29, 28, 28);
 }
 .clock{
     font-size: 14px;
@@ -36,5 +49,25 @@
     border-bottom: 2px solid rgb(142, 141, 141);
     border-left: 2px solid rgb(29, 28, 28);
     border-top: 2px solid rgb(29, 28, 28);
+}
+/*Icono de audio*/
+.audioOn {
+  /* position: absolute; */
+  width: 25px;
+  height: 25px;
+}
 
+.on1 {
+  margin-right: 15px;
+}
+.on2 {
+  top: 575px;
+  right: 55px;
+}
+
+.off {
+  position: relative;
+  left: 23px;
+  width: 25px;
+  height: 25px;
 }
