@@ -50,8 +50,8 @@ function Main() {
   const [audio, setAudio] = useState(new Audio(pum));
   // const [play, { stop }] = useSound(musica);
   // const [isPlaying, setIsPlaying] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showContract, setShowContract] = useState(false);
+  const [isModalChatOpen, setIsModalChatOpen] = useState(false);
+  const [isModalContractOpen, setIsModalContractOpen] = useState(false);
 
   // const handlePlay = () => {
   //   if (!isPlaying) {
@@ -158,19 +158,24 @@ function Main() {
     };
   }, [audio]);
 
-  const handleImageClick = () => {
-    setIsModalOpen(true);
+  const handleImageChatClick = () => {
+    setIsModalChatOpen(true);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+  const handleCloseChatModal = () => {
+    setIsModalChatOpen(false);
   };
+
+  const handleImageContractClick = () => {
+    setIsModalContractOpen(true);
+  };
+
+  const handleCloseContractModal = () => {
+    setIsModalContractOpen(false);
+  };
+
   const handleToken = () => {
     setShowModalToken((elemento) => !elemento)
-  }
-
-  const handleContract = () => {
-    setShowContract((elemento) => !elemento)
   }
 
   const handleMeme = () => {
@@ -209,7 +214,6 @@ function Main() {
         {showAlert6 && <Alert message="YES" position="topRight" />}
         {showAlert7 && <Alert message="YES" position="topLeftR" />}
         {showAlert8 && <Alert message="YES" position="bottomRightL" />}
-        {showContract && <Contract/>}
         {showModalToken && <Medal textB='Burn tokens' messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
         {showModalMeme && <Medal colorM='colorMSP' messageM='.' token='.' memes={memes}/>}
         <div className={styles.containerMini}>
@@ -218,9 +222,9 @@ function Main() {
               <img
                 src={telegram}
                 alt="#twitter"
-                style={{width: '80px', height: '55px', marginBottom:'0px'}}
+                style={{width: '90px', height: '65px', marginBottom:'0px'}}
               />
-              <p style={{color: 'white'}}>TELEGRAM</p>
+              <p style={{color: 'white', fontSize: '7px' }}>TELEGRAM</p>
             </div>
           </Link> 
           <Link to='https://twitter.com/'>
@@ -228,48 +232,61 @@ function Main() {
               <img
                 src={twitter}
                 alt="#tele"
-                style={{width: '80px', height: '55px', marginBottom:'0px'}}
+                style={{width: '90px', height: '65px', marginBottom:'0px'}}
               />
-              <p style={{color: 'white'}} >TWITTER</p>
+              <p style={{color: 'white', fontSize: '7px' }} >TWITTER</p>
             </div>
           </Link>
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={meme} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} onClick={handleMeme}/>
-            <p>MEMES</p>
+            <img src={meme} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleMeme}/>
+            <p style={{color: 'white', fontSize: '7px' }} >MEMES</p>
           </div>
           <div>
             <img
               src={contract}
               alt=""
-              style={{width: '80px', height: '55px', marginBottom:'0px'}}
-              onClick={handleContract}
+              style={{width: '90px', height: '65px', marginBottom:'0px'}}
+              onClick={handleImageContractClick}
             />
-            <p>MSDOS</p>
-          </div>
-        </div>
-        <div className={styles.containerMini}>
-          <div>
-            <img src={pc} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
-            <p>CHART</p>
-          </div>
-          <div>
-            <img src={mdos} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}}
-            onClick={handleImageClick} />
-            <p>CHAT BOT</p>
+            <p style={{color: 'white', fontSize: '7px' }}>MSDOS</p>
           </div>
           <Modal
-            isOpen={isModalOpen}
-            onRequestClose={handleCloseModal}
+            isOpen={isModalContractOpen}
+            onRequestClose={handleCloseContractModal}
             contentLabel="Chat Modal"
             style={{
               content: {
-                backgroundSize:'495px 610px',
-                backgroundColor: 'black',
-                width: '375px',
-                height: '550px',
-                left:'870px',
+                background: 'transparent',
+                border: 'none',
+              },
+              overlay: {
+                backgroundColor: 'transparent',
+              }
+            }}
+            >
+            <Contract />
+          </Modal>
+        </div>
+        <div className={styles.containerMini}>
+          <div>
+            <img src={pc} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
+            <p style={{color: 'white', fontSize: '7px' }}>CHART</p>
+          </div>
+          <div>
+            <img src={mdos} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}}
+            onClick={handleImageChatClick} />
+            <p style={{color: 'white', fontSize: '7px' }}>CHAT BOT</p>
+          </div>
+          <Modal
+            isOpen={isModalChatOpen}
+            onRequestClose={handleCloseChatModal}
+            contentLabel="Chat Modal"
+            style={{
+              content: {
+                background: 'transparent',
+                border: 'none',
               },
               overlay: {
                 backgroundColor: 'transparent',
@@ -281,12 +298,12 @@ function Main() {
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={trash} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}}onClick={handleToken} />
-            <p>TOKEN BURN</p>
+            <img src={trash} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleToken} />
+            <p style={{color: 'white', fontSize: '7px' }}>TOKEN BURN</p>
           </div>
           <div>
-            <img src={game} alt="" style={{width: '80px', height: '55px', marginBottom:'0px'}} />
-            <p>GAMES</p>
+            <img src={game} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
+            <p style={{color: 'white', fontSize: '7px' }}>GAMES</p>
           </div>
           {/* <button className="btn btn-primary" >Soy un boton</button> */}
         </div>

@@ -42,7 +42,7 @@ const Nav = () => {
           src="https://img.icons8.com/color/48/windows-95.png"
           alt="windows-95"
         />
-        <p className={style.start}>Start</p>
+        <p className="btn btn-primary" >Start</p>
       </div>
       <div className={style.footer}>
         <img
