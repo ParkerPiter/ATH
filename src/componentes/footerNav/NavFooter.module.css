@@ -37,7 +37,19 @@
   border-left: 2px solid rgb(29, 28, 28);
   border-top: 2px solid rgb(29, 28, 28);
 }
-
+.clock{
+    font-size: 14px;
+    position: relative;
+    margin-top: 1px;
+    width: 80px;
+    height: 24px;
+    padding-right: 4px ;
+    text-align: center;
+    border-right: 2px solid rgb(142, 141, 141);
+    border-bottom: 2px solid rgb(142, 141, 141);
+    border-left: 2px solid rgb(29, 28, 28);
+    border-top: 2px solid rgb(29, 28, 28);
+}
 /*Icono de audio*/
 .audioOn {
   /* position: absolute; */
