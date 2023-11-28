@@ -34,6 +34,7 @@ Modal.setAppElement('#root');
 
 
 
+
 function Main() {
   const [showRocket, setShowRocket] = useState(false);
   const [showFire, setShowFire] = useState(false);
@@ -48,24 +49,8 @@ function Main() {
   const [showModalToken, setShowModalToken] = useState(false);
   const [showModalMeme, setShowModalMeme] = useState(false);
   const [audio, setAudio] = useState(new Audio(pum));
-  // const [play, { stop }] = useSound(musica);
-  // const [isPlaying, setIsPlaying] = useState(false);
   const [isModalChatOpen, setIsModalChatOpen] = useState(false);
   const [isModalContractOpen, setIsModalContractOpen] = useState(false);
-
-  // const handlePlay = () => {
-  //   if (!isPlaying) {
-  //     play();
-  //     setIsPlaying(true);
-  //   }
-  // };
-
-  // const handleStop = () => {
-  //   if (isPlaying) {
-  //     stop();
-  //     setIsPlaying(false);
-  //   }
-  // };
 
   const playSound = () => {
     audio.load();
@@ -252,22 +237,24 @@ function Main() {
             />
             <p style={{color: 'white', fontSize: '7px' }}>MSDOS</p>
           </div>
-          <Modal
-            isOpen={isModalContractOpen}
-            onRequestClose={handleCloseContractModal}
-            contentLabel="Chat Modal"
-            style={{
-              content: {
-                background: 'transparent',
-                border: 'none',
-              },
-              overlay: {
-                backgroundColor: 'transparent',
-              }
-            }}
-            >
-            <Contract />
-          </Modal>
+          
+            <Modal
+              isOpen={isModalContractOpen}
+              onRequestClose={handleCloseContractModal}
+              contentLabel="Chat Modal"
+              style={{
+                content: {
+                  background: 'transparent',
+                  border: 'none',
+                },
+                overlay: {
+                  backgroundColor: 'transparent',
+                }
+              }}
+              >
+                <Contract />
+            </Modal>
+          
         </div>
         <div className={styles.containerMini}>
           <div>
@@ -279,6 +266,7 @@ function Main() {
             onClick={handleImageChatClick} />
             <p style={{color: 'white', fontSize: '7px' }}>CHAT BOT</p>
           </div>
+          
           <Modal
             isOpen={isModalChatOpen}
             onRequestClose={handleCloseChatModal}
@@ -293,8 +281,9 @@ function Main() {
               }
             }}
             >
-          <Chat />
+            <Chat />
         </Modal>
+        
         </div>
         <div className={styles.containerMini}>
           <div>
@@ -305,7 +294,6 @@ function Main() {
             <img src={game} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
             <p style={{color: 'white', fontSize: '7px' }}>GAMES</p>
           </div>
-          {/* <button className="btn btn-primary" >Soy un boton</button> */}
         </div>
         
       </div>

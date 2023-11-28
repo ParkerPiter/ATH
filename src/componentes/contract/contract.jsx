@@ -1,10 +1,13 @@
 import simbolo from '../../assets/MSDOS.jpeg'
 import '../../../windows-95-ui-kit/css/w95.css'
 import './contract.css'
+import Draggable from 'react-draggable';
 
 const Contract = () =>{
     return(
+        <Draggable>
         <div className='card card-tertiary container '>
+            
             <div>
                 <p className='card-header'>
                     Contrato
@@ -15,6 +18,7 @@ const Contract = () =>{
                 <p className=''> Terminos y condiciones del contrato: Curabitur interdum eu mi a sollicitudin. Nulla tristique hendrerit pretium. Integer tempus sagittis enim at finibus. Vestibulum sed ultricies turpis, a iaculis ante. Praesent aliquet aliquam ante eu mattis. Donec molestie, odio vel lobortis auctor, nunc diam ultricies augue, molestie porta sem arcu ac dui. Pellentesque in ultrices enim, ut vehicula ante. Nullam in condimentum nisi estoy al limite del contrato</p>
             </div>
         </div>
+        </Draggable>
     )
 }
 
