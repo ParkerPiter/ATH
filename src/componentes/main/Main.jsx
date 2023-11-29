@@ -4,10 +4,6 @@ import Nav from "../footerNav/NavFooter";
 // import win from '../../../windows-95-ui-kit/css/w95.css?inline'
 import '../../../windows-95-ui-kit/css/w95.css';
 //PNGs imports
-import imgModal from '../modal/modalEnBlanco.jpg';
-import meme1 from '../../assets/meme1.jpg';
-import meme2 from '../../assets/meme2.jpg';
-import meme3 from '../../assets/meme3.jpg';
 import styles from "../../app.module.css";
 import telegram from "../../assets/TELEGRAM.png";
 import twitter from "../../assets/TWITTER.png";
@@ -26,6 +22,8 @@ import Alert from "../alert/Alert";
 import Medal from "../modal/Modal";
 import Contract from "../contract/contract"
 import Chat from "../chat/Chat";
+import Tokenburn from "../tokenburn/tokenburn";
+import Memes from "../meme/Meme";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
 import useSound from 'use-sound'
@@ -52,6 +50,8 @@ function Main() {
   const [showModalMeme, setShowModalMeme] = useState(false);
   const [isModalChatOpen, setIsModalChatOpen] = useState(false);
   const [isModalContractOpen, setIsModalContractOpen] = useState(false);
+  const [isModalTokenOpen, setIsModalTokenOpen] = useState(false);
+  const [isModalMemeOpen, setIsModalMemeOpen] = useState(false);
   //playAlerts
   const [audio, setAudio] = useState(new Audio(pum));
   //playMusic
@@ -177,18 +177,21 @@ function Main() {
     setIsModalContractOpen(false);
   };
 
-  const handleToken = () => {
-    setShowModalToken((elemento) => !elemento)
-  }
+  const handleImageTokenClick = () => {
+    setIsModalTokenOpen(true);
+  };
 
-  const handleMeme = () => {
-    setShowModalMeme((elemento) => !elemento)
-  }
-  const memes = [
-    meme1,
-    meme2,
-    meme3
-  ]
+  const handleCloseTokenModal = () => {
+    setIsModalTokenOpen(false);
+  };
+
+  const handleImageMemeClick = () => {
+    setIsModalMemeOpen(true);
+  };
+
+  const handleCloseMemeModal = () => {
+    setIsModalMemeOpen(false);
+  };
 
   return (
     <div>
@@ -243,22 +246,12 @@ function Main() {
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={meme} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleMeme}/>
+            <img src={meme} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleImageMemeClick}/>
             <p style={{color: 'white', fontSize: '7px' }} >MEMES</p>
           </div>
-          <div>
-            <img
-              src={contract}
-              alt=""
-              style={{width: '90px', height: '65px', marginBottom:'0px'}}
-              onClick={handleImageContractClick}
-            />
-            <p style={{color: 'white', fontSize: '7px' }}>MSDOS</p>
-          </div>
-          
-            <Modal
-              isOpen={isModalContractOpen}
-              onRequestClose={handleCloseContractModal}
+          <Modal
+              isOpen={isModalMemeOpen}
+              // onRequestClose={handleCloseTokenModal}
               contentLabel="Chat Modal"
               style={{
                 content: {
@@ -270,9 +263,33 @@ function Main() {
                 }
               }}
               >
-                <Contract />
+                <Memes handleCloseMemeModal={handleCloseMemeModal} />
+          </Modal>
+          <div>
+              <img
+                src={contract}
+                alt=""
+                style={{width: '90px', height: '65px', marginBottom:'0px'}}
+                onClick={handleImageContractClick}
+              />
+              <p style={{color: 'white', fontSize: '7px' }}>MSDOS</p>
+          </div>
+            <Modal
+              isOpen={isModalContractOpen}
+              // onRequestClose={handleCloseContractModal}
+              contentLabel="Chat Modal"
+              style={{
+                content: {
+                  background: 'transparent',
+                  border: 'none',
+                },
+                overlay: {
+                  backgroundColor: 'transparent',
+                }
+              }}
+              >
+                <Contract handleCloseContractModal={handleCloseContractModal} />
             </Modal>
-          
         </div>
         <div className={styles.containerMini}>
           <div>
@@ -284,10 +301,9 @@ function Main() {
             onClick={handleImageChatClick} />
             <p style={{color: 'white', fontSize: '7px' }}>CHAT BOT</p>
           </div>
-          
           <Modal
             isOpen={isModalChatOpen}
-            onRequestClose={handleCloseChatModal}
+            // onRequestClose={handleCloseChatModal}
             contentLabel="Chat Modal"
             style={{
               content: {
@@ -300,20 +316,34 @@ function Main() {
             }}
             >
             <Chat handleCloseChatModal={handleCloseChatModal}/>
-        </Modal>
-        
+          </Modal>
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={trash} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleToken} />
+            <img src={trash} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleImageTokenClick}/>
             <p style={{color: 'white', fontSize: '7px' }}>TOKEN BURN</p>
           </div>
+          <Modal
+              isOpen={isModalTokenOpen}
+              onRequestClose={handleCloseTokenModal}
+              contentLabel="Chat Modal"
+              style={{
+                content: {
+                  background: 'transparent',
+                  border: 'none',
+                },
+                overlay: {
+                  backgroundColor: 'transparent',
+                }
+              }}
+              >
+                <Tokenburn handleCloseTokenModal={handleCloseTokenModal} />
+          </Modal>
           <div>
             <img src={game} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
             <p style={{color: 'white', fontSize: '7px' }}>GAMES</p>
           </div>
         </div>
-        
       </div>
       <Nav handlePlay={handlePlay}  handleStop={handleStop}/>
     </div>
