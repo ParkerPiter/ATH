@@ -18,3 +18,18 @@
     position: relative;
     margin-left: 2px; 
 }
+
+.select{
+    color:black;
+    background-color:white;
+}
+
+.icon-contract{
+    width: 28px;
+    margin-left: 3px;
+}
+
+.aling-item{
+    display: flex;
+    align-items: center;
+}
