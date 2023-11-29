@@ -4,10 +4,6 @@ import Nav from "../footerNav/NavFooter";
 // import win from '../../../windows-95-ui-kit/css/w95.css?inline'
 import '../../../windows-95-ui-kit/css/w95.css';
 //PNGs imports
-import imgModal from '../modal/modalEnBlanco.jpg';
-import meme1 from '../../assets/meme1.jpg';
-import meme2 from '../../assets/meme2.jpg';
-import meme3 from '../../assets/meme3.jpg';
 import styles from "../../app.module.css";
 import telegram from "../../assets/TELEGRAM.png";
 import twitter from "../../assets/TWITTER.png";
@@ -27,6 +23,7 @@ import Medal from "../modal/Modal";
 import Contract from "../contract/contract"
 import Chat from "../chat/Chat";
 import Tokenburn from "../tokenburn/tokenburn";
+import Memes from "../meme/Meme";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
 import useSound from 'use-sound'
@@ -54,6 +51,7 @@ function Main() {
   const [isModalChatOpen, setIsModalChatOpen] = useState(false);
   const [isModalContractOpen, setIsModalContractOpen] = useState(false);
   const [isModalTokenOpen, setIsModalTokenOpen] = useState(false);
+  const [isModalMemeOpen, setIsModalMemeOpen] = useState(false);
   //playAlerts
   const [audio, setAudio] = useState(new Audio(pum));
   //playMusic
@@ -187,14 +185,13 @@ function Main() {
     setIsModalTokenOpen(false);
   };
 
-  const handleMeme = () => {
-    setShowModalMeme((elemento) => !elemento)
-  }
-  const memes = [
-    meme1,
-    meme2,
-    meme3
-  ]
+  const handleImageMemeClick = () => {
+    setIsModalMemeOpen(true);
+  };
+
+  const handleCloseMemeModal = () => {
+    setIsModalMemeOpen(false);
+  };
 
   return (
     <div>
@@ -249,9 +246,25 @@ function Main() {
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={meme} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleMeme}/>
+            <img src={meme} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleImageMemeClick}/>
             <p style={{color: 'white', fontSize: '7px' }} >MEMES</p>
           </div>
+          <Modal
+              isOpen={isModalMemeOpen}
+              // onRequestClose={handleCloseTokenModal}
+              contentLabel="Chat Modal"
+              style={{
+                content: {
+                  background: 'transparent',
+                  border: 'none',
+                },
+                overlay: {
+                  backgroundColor: 'transparent',
+                }
+              }}
+              >
+                <Memes handleCloseMemeModal={handleCloseMemeModal} />
+          </Modal>
           <div>
               <img
                 src={contract}
