@@ -6,7 +6,9 @@ import Draggable from 'react-draggable';
 
 const Chat = ({handleCloseChatModal}) =>{
     const [messages, setMessages] = useState([{
-        text: '¡Bienvenidos a ATH, la comunidad de la web3 donde comprar en ATH no va a ser un error! Estamos comprometidos a hacer todo lo necesario para que este proyecto nos lleve a todos al éxito, incluido a nuestro pobre vagabundo que compro en ATH el pasado bullrun. ¿Cómo puedo asistirte hoy?',
+        text: `Hello, crypto adventurer! Ready to buy at ATH without fear of falling? I'll
+        be your guide in the exciting world of ATH, where buying at the top is just the
+        beginning. What do you want to explore today?`,
         from: 'bot'
     }]);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -21,26 +23,21 @@ const Chat = ({handleCloseChatModal}) =>{
           body: JSON.stringify({ message: option }),
       });
       const data = await response.json();
-      setMessages([{ text: data.message, from: 'bot' }]);
-  };
-
-  const handleSubOptionClick = async (subOption) => {
-      const response = await fetch('http://localhost:3000/chat', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ message: `${selectedOption}.${subOption}` }),
-      });
-      const data = await response.json();
-      setMessages([{ text: data.message, from: 'bot' }]);
+      let messageText = data.message;
+    if (option === '5') {
+        messageText += ' <a href="www.dexscreener.com/ourpair">Click for details</a>';
+    }
+    if (option === '2'){
+      messageText += '<a href="#telegram"> Telegram</a> <a href="#twitter">Twitter</a>';
+    }
+    setMessages([{ text: messageText, from: 'bot' }]);
   };
 
   return (
     <Draggable>
     <div className='card card-tertiary container-chat'>
-      <div className='card-header' style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginRight:'2px'}}>
-        <p>ATH CHAT</p>
+      <div className='card-header' style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginRight:'2px', padding:'0px 4px'}}>
+          <h3>ATH CHAT</h3>
           <div>
             <button className="btn btn-primary" style={{marginRight:'-2px', padding:'5px'}}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
@@ -61,13 +58,14 @@ const Chat = ({handleCloseChatModal}) =>{
           </div>
       </div>
         <div className="card-body bg-custom ">
-        <h3 className='card-text'>Opciones (presiona un numero para obtener respuesta):</h3>
-                <p className='quest' onClick={() => handleOptionClick('1')}>1.Descubre qué es ATH Token</p>
-                {selectedOption === '1' && <p className='quest' onClick={() => handleSubOptionClick('1')}>1.1.Sub-opción para ATH Token</p>}
-                <p className='quest' onClick={() => handleOptionClick('2')}>2.Como puedes obtener ATH Tokens</p>
-                {selectedOption === '2' && <p className='quest' onClick={() => handleSubOptionClick('1')}>2.1.Sub-opción para obtener ATH Tokens</p>}
-                <p className='quest' onClick={() => handleOptionClick('3')}>3.Informate sobre el proyecto ATH y como puedes contribuir</p>
-                {selectedOption === '3' && <p className='quest' onClick={() => handleSubOptionClick('1')}>3.1.Sub-opción para el proyecto ATH</p>}
+        <h3 className='card-text'>Options (click for response):</h3>
+                <p className='quest' onClick={() => handleOptionClick('1')}>Token Burning Bin Description</p>
+                <p className='quest' onClick={() => handleOptionClick('2')}>Social Media</p>
+                <p className='quest' onClick={() => handleOptionClick('3')}>ATH Games</p>
+                <p className='quest' onClick={() => handleOptionClick('4')}>MEMEs</p>
+                <p className='quest' onClick={() => handleOptionClick('5')}>Chart</p>
+                <p className='quest' onClick={() => handleOptionClick('6')}>Roadmap</p>
+                <p className='quest' onClick={() => handleOptionClick('7')}>Supply?</p>
           <ul className='chat'>
               {messages.map((message, index) => (
                 <li key={index} className={message.from === 'user' ? 'userMessage' : 'botMessage'}>
@@ -79,7 +77,7 @@ const Chat = ({handleCloseChatModal}) =>{
                       : 
                       <>
                           <div className='burbuja'>
-                              <span className='message-bot'>{message.text} </span>
+                              <span className='message-bot' dangerouslySetInnerHTML={{ __html: message.text }}></span>
                           </div>
                           <span><img src={botAvatar} alt="Bot avatar" className='botAvatar' /></span>
                       </>

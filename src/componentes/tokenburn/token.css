@@ -1,0 +1,13 @@
+.container-token{
+    position:absolute;
+    max-width: 30%;
+    left: 770px;
+}
+
+.token-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 45px;
+}

@@ -26,6 +26,7 @@ import Alert from "../alert/Alert";
 import Medal from "../modal/Modal";
 import Contract from "../contract/contract"
 import Chat from "../chat/Chat";
+import Tokenburn from "../tokenburn/tokenburn";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
 import useSound from 'use-sound'
@@ -52,6 +53,7 @@ function Main() {
   const [showModalMeme, setShowModalMeme] = useState(false);
   const [isModalChatOpen, setIsModalChatOpen] = useState(false);
   const [isModalContractOpen, setIsModalContractOpen] = useState(false);
+  const [isModalTokenOpen, setIsModalTokenOpen] = useState(false);
   //playAlerts
   const [audio, setAudio] = useState(new Audio(pum));
   //playMusic
@@ -177,9 +179,13 @@ function Main() {
     setIsModalContractOpen(false);
   };
 
-  const handleToken = () => {
-    setShowModalToken((elemento) => !elemento)
-  }
+  const handleImageTokenClick = () => {
+    setIsModalTokenOpen(true);
+  };
+
+  const handleCloseTokenModal = () => {
+    setIsModalTokenOpen(false);
+  };
 
   const handleMeme = () => {
     setShowModalMeme((elemento) => !elemento)
@@ -247,18 +253,17 @@ function Main() {
             <p style={{color: 'white', fontSize: '7px' }} >MEMES</p>
           </div>
           <div>
-            <img
-              src={contract}
-              alt=""
-              style={{width: '90px', height: '65px', marginBottom:'0px'}}
-              onClick={handleImageContractClick}
-            />
-            <p style={{color: 'white', fontSize: '7px' }}>MSDOS</p>
+              <img
+                src={contract}
+                alt=""
+                style={{width: '90px', height: '65px', marginBottom:'0px'}}
+                onClick={handleImageContractClick}
+              />
+              <p style={{color: 'white', fontSize: '7px' }}>MSDOS</p>
           </div>
-          
             <Modal
               isOpen={isModalContractOpen}
-              onRequestClose={handleCloseContractModal}
+              // onRequestClose={handleCloseContractModal}
               contentLabel="Chat Modal"
               style={{
                 content: {
@@ -272,7 +277,6 @@ function Main() {
               >
                 <Contract handleCloseContractModal={handleCloseContractModal} />
             </Modal>
-          
         </div>
         <div className={styles.containerMini}>
           <div>
@@ -284,10 +288,9 @@ function Main() {
             onClick={handleImageChatClick} />
             <p style={{color: 'white', fontSize: '7px' }}>CHAT BOT</p>
           </div>
-          
           <Modal
             isOpen={isModalChatOpen}
-            onRequestClose={handleCloseChatModal}
+            // onRequestClose={handleCloseChatModal}
             contentLabel="Chat Modal"
             style={{
               content: {
@@ -300,20 +303,34 @@ function Main() {
             }}
             >
             <Chat handleCloseChatModal={handleCloseChatModal}/>
-        </Modal>
-        
+          </Modal>
         </div>
         <div className={styles.containerMini}>
           <div>
-            <img src={trash} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleToken} />
+            <img src={trash} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleImageTokenClick}/>
             <p style={{color: 'white', fontSize: '7px' }}>TOKEN BURN</p>
           </div>
+          <Modal
+              isOpen={isModalTokenOpen}
+              onRequestClose={handleCloseTokenModal}
+              contentLabel="Chat Modal"
+              style={{
+                content: {
+                  background: 'transparent',
+                  border: 'none',
+                },
+                overlay: {
+                  backgroundColor: 'transparent',
+                }
+              }}
+              >
+                <Tokenburn handleCloseTokenModal={handleCloseTokenModal} />
+          </Modal>
           <div>
             <img src={game} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
             <p style={{color: 'white', fontSize: '7px' }}>GAMES</p>
           </div>
         </div>
-        
       </div>
       <Nav handlePlay={handlePlay}  handleStop={handleStop}/>
     </div>
