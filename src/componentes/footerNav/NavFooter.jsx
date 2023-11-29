@@ -5,22 +5,22 @@ import off from "../../assets/musicoff.png";
 import useSound from "use-sound";
 import musica from "../../assets/musica.mp3";
 
-const Nav = () => {
-  const [play, { stop }] = useSound(musica);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const handlePlay = () => {
-    if (!isPlaying) {
-      play();
-      setIsPlaying(true);
-    }
-  };
+const Nav = ({handlePlay, handleStop}) => {
+  // const [play, { stop }] = useSound(musica);
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // const handlePlay = () => {
+  //   if (!isPlaying) {
+  //     play();
+  //     setIsPlaying(true);
+  //   }
+  // };
 
-  const handleStop = () => {
-    if (isPlaying) {
-      stop();
-      setIsPlaying(false);
-    }
-  };
+  // const handleStop = () => {
+  //   if (isPlaying) {
+  //     stop();
+  //     setIsPlaying(false);
+  //   }
+  // };
   // Obtener la hora actual
   const time = new Date();
 
@@ -35,14 +35,13 @@ const Nav = () => {
   return (
     <div className={style.footer}>
       <div>
-        <img
-          className="win"
-          width="30"
-          height="30"
+        <p className="btn btn-primary" style={{paddingRight:'20px'}}><img
+        style={{marginLeft:'-45px',marginTop:'-3px', position:'absolute'}}
+          width="25"
+          height="25"
           src="https://img.icons8.com/color/48/windows-95.png"
           alt="windows-95"
-        />
-        <p className="btn btn-primary" >Start</p>
+        />Start</p>
       </div>
       <div className={style.footer}>
         <img
