@@ -270,7 +270,7 @@ function Main() {
                 }
               }}
               >
-                <Contract />
+                <Contract handleCloseContractModal={handleCloseContractModal} />
             </Modal>
           
         </div>
