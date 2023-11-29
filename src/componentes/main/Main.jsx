@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
+import Nav from "../footerNav/NavFooter";
 // import win from '../../../windows-95-ui-kit/css/w95.css?inline'
 import '../../../windows-95-ui-kit/css/w95.css';
 //PNGs imports
@@ -27,17 +28,17 @@ import Contract from "../contract/contract"
 import Chat from "../chat/Chat";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
-// import useSound from 'use-sound'
-// import musica from "../../assets/musica.mp3"
+import useSound from 'use-sound'
+import musica from "../../assets/musica.mp3"
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
-
-
-
 function Main() {
+  //showRocket
   const [showRocket, setShowRocket] = useState(false);
+  //showFire
   const [showFire, setShowFire] = useState(false);
+  //showAlerts
   const [showAlert, setShowAlert] = useState(false);
   const [showAlert2, setShowAlert2] = useState(false);
   const [showAlert3, setShowAlert3] = useState(false);
@@ -46,12 +47,28 @@ function Main() {
   const [showAlert6, setShowAlert6] = useState(false);
   const [showAlert7, setShowAlert7] = useState(false);
   const [showAlert8, setShowAlert8] = useState(false);
+  //showModals
   const [showModalToken, setShowModalToken] = useState(false);
   const [showModalMeme, setShowModalMeme] = useState(false);
-  const [audio, setAudio] = useState(new Audio(pum));
   const [isModalChatOpen, setIsModalChatOpen] = useState(false);
   const [isModalContractOpen, setIsModalContractOpen] = useState(false);
-
+  //playAlerts
+  const [audio, setAudio] = useState(new Audio(pum));
+  //playMusic
+  const [play, { stop }] = useSound(musica);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const handlePlay = () => {
+    if (!isPlaying) {
+      play();
+      setIsPlaying(true);
+    }
+  };
+  const handleStop = () => {
+    if (isPlaying) {
+      stop();
+      setIsPlaying(false);
+    }
+  };
   const playSound = () => {
     audio.load();
     audio.play();
@@ -94,6 +111,7 @@ function Main() {
           playSound();
           break;
         default:
+          handlePlay()
           clearInterval(intervalId); // Detener la repetición después de que todas las alertas se han mostrado
       }
       counter += 1;
@@ -281,7 +299,7 @@ function Main() {
               }
             }}
             >
-            <Chat />
+            <Chat handleCloseChatModal={handleCloseChatModal}/>
         </Modal>
         
         </div>
@@ -297,6 +315,7 @@ function Main() {
         </div>
         
       </div>
+      <Nav handlePlay={handlePlay}  handleStop={handleStop}/>
     </div>
   );
 }
