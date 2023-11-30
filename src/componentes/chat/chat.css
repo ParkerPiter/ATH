@@ -6,6 +6,10 @@
   left: 770px;
 }
 
+.bg-custom{
+    background-color: #000;
+}
+
 .firstOp {
   margin-top: 35px;
 }
