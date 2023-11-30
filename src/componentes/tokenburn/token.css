@@ -4,6 +4,10 @@
     left: 770px;
 }
 
+.bg-custom{
+    background-color: #000;
+}
+
 .token-body{
     display: flex;
     flex-direction: column;
