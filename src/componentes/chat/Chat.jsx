@@ -36,7 +36,7 @@ const Chat = ({handleCloseChatModal}) =>{
   return (
     <Draggable>
     <div className='card card-tertiary container-chat'>
-      <div className='card-header' style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginRight:'2px', padding:'0px 4px'}}>
+      <div className='card-header headerMedia' style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginRight:'2px', padding:'0px 4px'}}>
           <h3>ATH CHAT</h3>
           <div>
             <button className="btn btn-primary" style={{marginRight:'-2px', padding:'5px'}}>
