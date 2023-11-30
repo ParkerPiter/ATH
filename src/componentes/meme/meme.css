@@ -6,6 +6,10 @@
     overflow-y: auto;
 }
 
+.bg-custom{
+    background-color: #000;
+}
+
 .img-memes{
     width:300px;
     height:250px;
