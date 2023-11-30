@@ -202,7 +202,7 @@ function Main() {
         {showFire && <img src={fire} alt="fire" className={styles.fire} />}
         {showAlert && (
           <Alert
-            message="¿ARE YOU READY TO BUY IN ATH?"
+            message="ARE YOU READY TO BUY IN ATH?"
             buttons={buttons1}
             position="center"
           />

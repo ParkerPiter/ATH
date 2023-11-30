@@ -1,132 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
-/* .barraAzul{
-    margin-top: -40px;
-    margin-left: -9px;
-    position: fixed;
-    content: '';
-    background-color: rgba(20,19,103,255);
-    width: 388px;
-    height: 40px;
-}
-.barraGris{
-    margin-top: -55px;
-    margin-left: -19px;
-    position: fixed;
-    content: '';
-    background-color: rgba(125,125,125,255);
-    width: 399px;
-    height: 15px;
-}
-.barraGris2{
-    margin-top: -15px;
-    margin-left: -19px;
-    position: fixed;
-    content: '';
-    background-color: rgba(125,125,125,255);
-    width: 399px;
-    height: 15px;
-}
-.barraGris3{
-    margin-top: 520px;
-    margin-left: -19px;
-    position: fixed;
-    content: '';
-    background-color: rgba(125,125,125,255);
-    width: 399px;
-    height: 15px;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
 
-.container-chat{
-    position:absolute;
-    max-width: 35%;
-    left: 770px;
+.container-chat {
+  position: absolute;
+  max-width: 35%;
+  left: 770px;
 }
 
-.firstOp{
-    margin-top: 35px;
+.firstOp {
+  margin-top: 35px;
 }
-.quest{
-    background-color: white;
-    border-radius: 5px;
-    color: blue;
-    padding: 0 15px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 800;
+.quest {
+  background-color: white;
+  border-radius: 5px;
+  color: blue;
+  padding: 0 15px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 800;
 }
 
-.chat{
-    color: black;
+.chat {
+  color: black;
 }
 
 .userMessage {
-    text-align: left;
-    margin: 10px 0;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 800;
-}
-  
-.botMessage {
-    display: flex;
-    align-items: center;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 800;
-    font-size: 12px;
+  text-align: left;
+  margin: 10px 0;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 800;
 }
 
-.message-bot{
-    margin-left: 0;
+.botMessage {
+  display: flex;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.message-bot {
+  margin-left: 0;
 }
 
 .botAvatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 10px;
-    background-color: #f0f0f0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: #f0f0f0;
 }
 
-.form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
-    margin-bottom: 30px;
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  margin-bottom: 30px;
 }
 
-.button{
-    padding: 2px 2px;
-    border-radius: 0px;
-    text-align: center;
-    width: 75px;
-    text-align: center;
-    background-color: gray;
-    margin-left: 2px;
+.button {
+  padding: 2px 2px;
+  border-radius: 0px;
+  text-align: center;
+  width: 75px;
+  text-align: center;
+  background-color: gray;
+  margin-left: 2px;
 }
 
-.input{
-    border-radius: 2px;
+.input {
+  border-radius: 2px;
 }
 
 .burbuja {
-    display: inline-block;
-    position: relative;
-    width: auto;
-    height: auto;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    max-width: 90%;
+  display: inline-block;
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  max-width: 90%;
 }
 
 .burbuja:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    right: -15px;
-    top: 50%;
-    border: 15px solid;
-    border-color: #f0f0f0 transparent transparent transparent;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: -15px;
+  top: 50%;
+  border: 15px solid;
+  border-color: #f0f0f0 transparent transparent transparent;
+}
+
+@media only screen and (min-width: 1650px) {
+  .container-chat {
+    max-width: 100%;
   }
+  .botAvatar {
+    width: 75px;
+    height: 75px;
+  }
+  .botMessage {
+    font-weight: 900;
+    font-size: 17px;
+}
+.userMessage {
+    font-weight: 900;
+}
+.quest {
+    font-weight: 900;
+    font-size: 17px;
+  }
+  .headerMedia{
+    font-size: 14px;
+  }
+}

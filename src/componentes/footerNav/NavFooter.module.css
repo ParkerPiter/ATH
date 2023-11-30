@@ -67,3 +67,39 @@
   width: 25px;
   height: 25px;
 }
+.win {
+  width: 25px;
+  height: 25px;
+  margin: 0px 5px -5px -40px;
+}
+@media only screen and (min-width: 1650px) {
+  .win {
+    width: 45px;
+    height: 45px;
+    margin: 0px 5px -12px -60px;
+  }
+  .clock{
+    font-size: 20px;
+    width: 100px;
+    height: 44px;
+}
+.audioOn {
+  /* position: absolute; */
+  width: 45px;
+  height: 45px;
+}
+
+.on1 {
+  margin-right: -15px;
+}
+.on2 {
+  top: 575px;
+  right: 55px;
+}
+
+.off {
+  left: 37px;
+  width: 45px;
+  height: 45px;
+}
+}
