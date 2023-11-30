@@ -74,9 +74,11 @@
 }
 .message{
   color: #000;
+  font-weight: bold;
+  font-size: 12px;
   text-align: center;
   margin-top: -180px;
-  margin-left: -459px;
+  margin-left: -489px;
 }
 
 .overlay-text p {
@@ -86,15 +88,16 @@
 .alert-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 55px;
+  margin-top: 30px;
   margin-left: 50px;
 }
 .btn {
   background-color: #8f8a89;
-  padding: 0.7px 60px 0.7px 60px;
+  padding: 3px 60px 3px 60px;
   margin-right: 60px;
   border-radius: 0;
   color:#000;
+  font-size: 15px;
   font-weight: bold;
   border-top: 3px solid #605e5e;
   border-left: 3px solid #605e5e;
