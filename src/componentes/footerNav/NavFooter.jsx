@@ -35,10 +35,8 @@ const Nav = ({handlePlay, handleStop}) => {
   return (
     <div className={style.footer}>
       <div>
-        <p className="btn btn-primary" style={{paddingRight:'20px'}}><img
-        style={{marginLeft:'-45px',marginTop:'-3px', position:'absolute'}}
-          width="25"
-          height="25"
+        <p className="btn btn-primary" style={{paddingRight:'20px', marginTop:'2px'}}><img
+          className={style.win}
           src="https://img.icons8.com/color/48/windows-95.png"
           alt="windows-95"
         />Start</p>
