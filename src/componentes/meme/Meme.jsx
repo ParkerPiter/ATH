@@ -6,14 +6,12 @@ import Draggable from 'react-draggable'
 import meme1 from '../../assets/meme1.jpg'
 import meme2 from '../../assets/meme2.jpg'
 import meme3 from '../../assets/meme3.jpg'
-import meme4 from '../../assets/meme3.jpg'
 const Memes = ({handleCloseMemeModal}) =>{
 
     const memes = [
         meme1,
         meme2,
         meme3,
-        meme4
       ]
 
     return(
