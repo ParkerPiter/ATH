@@ -8,18 +8,35 @@ import musica from "../../assets/musica.mp3";
 const Nav = ({handlePlay, handleStop, openModalToken, openModalGame, openModalChat, openModalMemes, openModalContract}) => {
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
-  console.log(isAccordionOpen)
 
   const handleStartClick = () => {
     setIsAccordionOpen(!isAccordionOpen);
   };
-  console.log(isAccordionOpen)
 
-  const handleOptionChange = (event) => {
-    if (event.target.value === 'opcion1') {
-      openModalToken();
-    }
+  const handleOptionClick = (event) => {
+      switch(event.target.id){
+        case 'token':
+          openModalToken();
+          break;
+
+        case 'game':
+          openModalGame();
+          break;
+
+        case 'chat':
+          openModalChat();
+          break;
+
+        case 'memes':
+          openModalMemes();
+          break;
+
+        case 'contract':
+          openModalContract();
+          break;
+      }
   }
+  
   // const [play, { stop }] = useSound(musica);
   // const [isPlaying, setIsPlaying] = useState(false);
   // const handlePlay = () => {
@@ -58,15 +75,15 @@ const Nav = ({handlePlay, handleStop, openModalToken, openModalGame, openModalCh
         />Start</p>
         {isAccordionOpen && (
             <div  style={{position: 'absolute', bottom: '100%', transform: 'scaleY(-1)'}}>
-              <ul onChange={handleOptionChange} style={{backgroundColor: 'gray', padding: '25px'}}>
-                <li id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</li>
-                <li id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</li>
-                <li id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</li>
-                <li id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</li>
-                <li id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</li>
-                <li id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</li>
-                <li id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</li>
-                <li id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</li>
+              <ul style={{backgroundColor: 'gray', padding: '25px'}}>
+                <p onClick={handleOptionClick} id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</p>
+                <p onClick={handleOptionClick} id="token" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</p>
+                <p onClick={handleOptionClick} id="game" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</p>
+                <p onClick={handleOptionClick} id="contract" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</p>
+                <p onClick={handleOptionClick} id="chat" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</p>
+                <p onClick={handleOptionClick} id="memes" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</p>
+                <p id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</p>
+                <p id="opcion1" style={{transform: 'scaleY(-1)', padding:'5px'}}>Abrir modal Tokenburn</p>
               </ul>
             </div>
           )}

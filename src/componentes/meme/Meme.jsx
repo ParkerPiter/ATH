@@ -5,9 +5,11 @@ import Draggable from 'react-draggable'
 //Memes importados:
 import meme1 from '../../assets/meme1.jpg'
 import meme2 from '../../assets/meme2.jpg'
+//Se importa el meme desde la carpeta assets y antes del from se le agrega un nombre
 import meme3 from '../../assets/meme3.jpg'
 const Memes = ({handleCloseMemeModal}) =>{
 
+    //En este array se agregaría el nombre de la variable del meme agregado y listo
     const memes = [
         meme1,
         meme2,
