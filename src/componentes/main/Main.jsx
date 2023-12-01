@@ -375,6 +375,14 @@ function Main() {
         openModalChat={handleImageChatClick}
         openModalMemes={handleImageMemeClick}
         openModalContract={handleImageContractClick} 
+        twitter={twitter}
+        telegram={telegram}
+        meme={meme}
+        contract={contract}
+        pc={pc}
+        mdos={mdos}
+        trash={trash}
+        game={game}
         />
     </div>
   );
