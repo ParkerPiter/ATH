@@ -284,7 +284,7 @@ function Main() {
           </div>
             <Modal
               isOpen={isModalContractOpen}
-              // onRequestClose={handleCloseContractModal}
+              onRequestClose={() => setIsModalContractOpen(false)}
               contentLabel="Chat Modal"
               style={{
                 content: {
@@ -311,7 +311,7 @@ function Main() {
           </div>
           <Modal
             isOpen={isModalChatOpen}
-            // onRequestClose={handleCloseChatModal}
+            onRequestClose={() => setIsModalChatOpen(false)}
             contentLabel="Chat Modal"
             style={{
               content: {
