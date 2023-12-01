@@ -24,6 +24,7 @@ import Contract from "../contract/contract"
 import Chat from "../chat/Chat";
 import Tokenburn from "../tokenburn/tokenburn";
 import Memes from "../meme/Meme";
+import Game from "../game/game";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
 import useSound from 'use-sound'
@@ -52,6 +53,7 @@ function Main() {
   const [isModalContractOpen, setIsModalContractOpen] = useState(false);
   const [isModalTokenOpen, setIsModalTokenOpen] = useState(false);
   const [isModalMemeOpen, setIsModalMemeOpen] = useState(false);
+  const [isModalGameOpen, setIsModalGameOpen] = useState(false);
   //playAlerts
   const [audio, setAudio] = useState(new Audio(pum));
   //playMusic
@@ -193,6 +195,14 @@ function Main() {
     setIsModalMemeOpen(false);
   };
 
+  const handleImageGameClick = () => {
+    setIsModalGameOpen(true);
+  };
+
+  const handleCloseGameModal = () => {
+    setIsModalGameOpen(false);
+  };
+
   return (
     <div>
       <div className={styles.container}>
@@ -220,8 +230,6 @@ function Main() {
         {showAlert6 && <Alert message="YES" position="topRight" />}
         {showAlert7 && <Alert message="YES" position="topLeftR" />}
         {showAlert8 && <Alert message="YES" position="bottomRightL" />}
-        {showModalToken && <Medal textB='Burn tokens' messageM='Send your Tokens:' token='7234HS7DHJWSEDH37DJ29'/>}
-        {showModalMeme && <Medal colorM='colorMSP' messageM='.' token='.' memes={memes}/>}
         <div className={styles.containerMini}>
           <Link to='https://web.telegram.org/a/'>
             <div>
@@ -245,7 +253,7 @@ function Main() {
           </Link>
         </div>
         <div className={styles.containerMini}>
-          <div>
+          <div className={styles.hovers}>
             <img src={meme} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleImageMemeClick}/>
             <p style={{color: 'white', fontSize: '7px' }} >MEMES</p>
           </div>
@@ -265,7 +273,7 @@ function Main() {
               >
                 <Memes handleCloseMemeModal={handleCloseMemeModal} />
           </Modal>
-          <div>
+          <div className={styles.hovers}>
               <img
                 src={contract}
                 alt=""
@@ -292,11 +300,11 @@ function Main() {
             </Modal>
         </div>
         <div className={styles.containerMini}>
-          <div>
+          <div className={styles.hovers}>
             <img src={pc} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
             <p style={{color: 'white', fontSize: '7px' }}>CHART</p>
           </div>
-          <div>
+          <div className={styles.hovers}>
             <img src={mdos} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}}
             onClick={handleImageChatClick} />
             <p style={{color: 'white', fontSize: '7px' }}>CHAT BOT</p>
@@ -319,7 +327,7 @@ function Main() {
           </Modal>
         </div>
         <div className={styles.containerMini}>
-          <div>
+          <div className={styles.hovers}>
             <img src={trash} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleImageTokenClick}/>
             <p style={{color: 'white', fontSize: '7px' }}>TOKEN BURN</p>
           </div>
@@ -339,13 +347,35 @@ function Main() {
               >
                 <Tokenburn handleCloseTokenModal={handleCloseTokenModal} />
           </Modal>
-          <div>
-            <img src={game} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} />
+          <div className={styles.hovers}>
+            <img src={game} alt="" style={{width: '90px', height: '65px', marginBottom:'0px'}} onClick={handleImageGameClick} />
             <p style={{color: 'white', fontSize: '7px' }}>GAMES</p>
           </div>
+          <Modal
+              isOpen={isModalGameOpen}
+              onRequestClose={handleCloseGameModal}
+              contentLabel="Chat Modal"
+              style={{
+                content: {
+                  background: 'transparent',
+                  border: 'none',
+                },
+                overlay: {
+                  backgroundColor: 'transparent',
+                }
+              }}
+              >
+                <Game handleCloseGameModal={handleCloseGameModal} />
+          </Modal>
         </div>
       </div>
-      <Nav handlePlay={handlePlay}  handleStop={handleStop}/>
+      <Nav handlePlay={handlePlay}  handleStop={handleStop} 
+        openModalToken={handleImageTokenClick} 
+        openModalGame={handleImageGameClick} 
+        openModalChat={handleImageChatClick}
+        openModalMemes={handleImageMemeClick}
+        openModalContract={handleImageContractClick} 
+        />
     </div>
   );
 }
