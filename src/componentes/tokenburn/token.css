@@ -8,6 +8,10 @@
     background-color: #000;
 }
 
+.text{
+    color: white;
+}
+
 .token-body{
     display: flex;
     flex-direction: column;
