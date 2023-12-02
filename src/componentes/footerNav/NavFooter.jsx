@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./NavFooter.module.css";
 import on from "../../assets/musicon.png";
 import off from "../../assets/musicoff.png";
@@ -8,6 +8,7 @@ import musica from "../../assets/musica.mp3";
 const Nav = ({handlePlay, handleStop, openModalToken, openModalGame, openModalChat, openModalMemes, openModalContract, twitter, telegram, meme, contract, pc, mdos, trash, game}) => {
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+  const [time, setTime] = useState(new Date());
 
   const handleStartClick = () => {
     setIsAccordionOpen(!isAccordionOpen);
@@ -60,12 +61,21 @@ const Nav = ({handlePlay, handleStop, openModalToken, openModalGame, openModalCh
   //     setIsPlaying(false);
   //   }
   // };
-  // Obtener la hora actual
-  const time = new Date();
 
-  // Obtener la hora, los minutos y los segundos
+  // Obtener la hora actual
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   let hours = time.getHours();
-  const min = time.getMinutes();
+  let min = time.getMinutes();
+  min = min < 10 ? `0${min}` : min;
 
   let pmAm = hours >= 12 ? "PM" : "AM";
 
@@ -117,7 +127,7 @@ const Nav = ({handlePlay, handleStop, openModalToken, openModalGame, openModalCh
           onClick={handlePlay}
         />
       <p className={style.clock}>
-        {hours}:{min} {pmAm}
+        {`${hours}:${min} ${pmAm}`}
       </p>
       </div>
     </div>
