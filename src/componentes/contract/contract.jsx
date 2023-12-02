@@ -11,6 +11,10 @@ import save from '../../assets/artage-io-48132_1701290409.png'
 import Draggable from 'react-draggable';
 
 const Contract = ({handleCloseContractModal}) =>{
+
+    //Terminos editables del contrato:
+    const terminos_Contract= 'Terminos y condiciones del contrato: Curabitur interdum eu mi a sollicitudin. Nulla tristique hendrerit pretium. Integer tempus sagittis enim at finibus. Vestibulum sed ultricies turpis, a iaculis ante. Praesent aliquet aliquam ante eu mattis. Donec molestie, odio vel lobortis auctor, nunc diam ultricies augue, molestie porta sem arcu ac dui. Pellentesque in ultrices enim, ut vehicula ante. Nullam in condimentum nisi estoy al limite del contrato'
+
     return(
         <Draggable>
         <div className='card card-tertiary container'>
@@ -45,8 +49,8 @@ const Contract = ({handleCloseContractModal}) =>{
                 <img className='icon-contract' src={carpeta} alt="" />
             </div>
             <div className='card-body bg-custom mediaCardBody'>
-                <p className=''>Microsoft(R) Windows 95 <br /> (C)Copyright Microsoft Corp 1981-1996 <br /> C:\WIN95 f:</p>
-                <p className=''> Terminos y condiciones del contrato: Curabitur interdum eu mi a sollicitudin. Nulla tristique hendrerit pretium. Integer tempus sagittis enim at finibus. Vestibulum sed ultricies turpis, a iaculis ante. Praesent aliquet aliquam ante eu mattis. Donec molestie, odio vel lobortis auctor, nunc diam ultricies augue, molestie porta sem arcu ac dui. Pellentesque in ultrices enim, ut vehicula ante. Nullam in condimentum nisi estoy al limite del contrato</p>
+                <p className='text'>Microsoft(R) Windows 95 <br /> (C)Copyright Microsoft Corp 1981-1996 <br /> C:\WIN95 f:</p>
+                <p className='text'>{terminos_Contract}</p>
             </div>
         </div>
         </Draggable>

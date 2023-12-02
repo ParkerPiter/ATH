@@ -32,8 +32,8 @@ const Tokenburn =({handleCloseTokenModal})=>{
                     </div>
                 </div>
                 <div className="card-body bg-custom token-body">
-                    <h2>Send your tokens:</h2>
-                    <h3>{token_address}</h3>
+                    <h2 className='text' >Send your tokens:</h2>
+                    <h3 className='text' >{token_address}</h3>
                 </div>
             </div>
         </Draggable>
