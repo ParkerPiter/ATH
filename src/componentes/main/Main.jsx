@@ -15,8 +15,7 @@ import mdos from "../../assets/CHAT BOT.png";
 import contract from "../../assets/CONTRACT.png";
 import rocket from "../../assets/ROCKET.png";
 import fire from "../../assets/image_processing20211213-25233-1wck2hl (1).gif";
-// import on from "../../assets/musicon.png";
-// import off from "../../assets/musicoff.png";
+import myvideo from '../../assets/Fondo_Web_ATH.mov'
 // components imports
 import Alert from "../alert/Alert";
 import Medal from "../modal/Modal";
@@ -28,15 +27,15 @@ import Game from "../game/game";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
 import useSound from 'use-sound'
-import musica from "../../assets/musica.mp3"
+import musica from '../../assets/Song_ath_WEB.MP3'
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 function Main() {
   //showRocket
-  const [showRocket, setShowRocket] = useState(false);
+  // const [showRocket, setShowRocket] = useState(false);
   //showFire
-  const [showFire, setShowFire] = useState(false);
+  // const [showFire, setShowFire] = useState(false);
   //showAlerts
   const [showAlert, setShowAlert] = useState(false);
   const [showAlert2, setShowAlert2] = useState(false);
@@ -214,10 +213,24 @@ function Main() {
   return (
     <div>
       <div className={styles.container}>
-        {showRocket && (
+        {/* {showRocket && (
           <img src={rocket} alt="rocket" className={styles.rocket} />
         )}
-        {showFire && <img src={fire} alt="fire" className={styles.fire} />}
+        {showFire && <img src={fire} alt="fire" className={styles.fire} />} */}
+        <video autoPlay loop muted
+        style={{
+          position: "fixed",
+          width: "100%",
+          left: "50%",
+          top: "50%",
+          height: "100%",
+          objectFit: "cover",
+          transform: "translate(-50%, -50%)",
+          zIndex: "-1"
+        }}
+      >
+        <source src={myvideo} type="video/mp4" />
+      </video>
         {showAlert && (
           <Alert
             message="ARE YOU READY TO BUY IN ATH?"
