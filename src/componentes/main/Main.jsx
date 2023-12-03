@@ -30,8 +30,10 @@ import useSound from 'use-sound'
 import musica from '../../assets/Song_ath_WEB.MP3'
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
+import { useModal } from "react-modal";
 
 function Main() {
+
   //showRocket
   // const [showRocket, setShowRocket] = useState(false);
   //showFire
@@ -160,6 +162,9 @@ function Main() {
       clearTimeout(timerAlert);
     };
   }, [audio]);
+
+  //Modals:
+   const modalStack = [];
 
   const handleImageChatClick = () => {
     setIsModalChatOpen(true);
