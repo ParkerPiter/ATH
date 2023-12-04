@@ -4,7 +4,7 @@ import '../../../windows-95-ui-kit/css/w95.css'
 import botAvatar from '../../assets/Imagen1.png'
 import Draggable from 'react-draggable';
 
-const Chat = ({handleCloseChatModal}) =>{
+const Chat = ({closeHandler}) =>{
     const [messages, setMessages] = useState([{
         text: `Hello, crypto adventurer! Ready to buy at ATH without fear of falling? I'll
         be your guide in the exciting world of ATH, where buying at the top is just the
