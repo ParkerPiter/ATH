@@ -15,11 +15,9 @@ import mdos from "../../assets/CHAT BOT.png";
 import contract from "../../assets/CONTRACT.png";
 import rocket from "../../assets/ROCKET.png";
 import fire from "../../assets/image_processing20211213-25233-1wck2hl (1).gif";
-// import on from "../../assets/musicon.png";
-// import off from "../../assets/musicoff.png";
+import myvideo from '../../assets/VideoBackwebAtualización.mp4'
 // components imports
 import Alert from "../alert/Alert";
-import Medal from "../modal/Modal";
 import Contract from "../contract/contract"
 import Chat from "../chat/Chat";
 import Tokenburn from "../tokenburn/tokenburn";
@@ -28,16 +26,17 @@ import Game from "../game/game";
 //Sonido de alert
 import pum from "../../componentes/alert/pum.mp3";
 import useSound from 'use-sound'
-import musica from "../../assets/musica.mp3"
+import musica from '../../assets/Song_ath_WEB.MP3'
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
+const Window = ({ component: Component, closeHandler }) => (
+  <div>
+    <Component closeHandler={closeHandler} />
+  </div>
+);
+
 function Main() {
-  //showRocket
-  const [showRocket, setShowRocket] = useState(false);
-  //showFire
-  const [showFire, setShowFire] = useState(false);
-  //showAlerts
   const [showAlert, setShowAlert] = useState(false);
   const [showAlert2, setShowAlert2] = useState(false);
   const [showAlert3, setShowAlert3] = useState(false);
@@ -46,13 +45,6 @@ function Main() {
   const [showAlert6, setShowAlert6] = useState(false);
   const [showAlert7, setShowAlert7] = useState(false);
   const [showAlert8, setShowAlert8] = useState(false);
-  //showModals
-  const [isModalChatOpen, setIsModalChatOpen] = useState(false);
-  const [isModalContractOpen, setIsModalContractOpen] = useState(false);
-  const [isModalTokenOpen, setIsModalTokenOpen] = useState(false);
-  const [isModalMemeOpen, setIsModalMemeOpen] = useState(false);
-  const [isModalGameOpen, setIsModalGameOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
   //playAlerts
   const [audio, setAudio] = useState(new Audio(pum));
   //playMusic
@@ -81,6 +73,13 @@ function Main() {
       playSound(); // Reproducir el sonido
       setShowAlert2(true);
     }, 200);
+  };
+
+  const playVideo = () => {
+    const videoElement = document.getElementById('myVideo'); 
+    if (videoElement) {
+      videoElement.play();
+    }
   };
 
   const handleConfirmAction = () => {
@@ -112,7 +111,8 @@ function Main() {
           playSound();
           break;
         default:
-          handlePlay()
+          playVideo(),
+          handlePlay(),
           clearInterval(intervalId); // Detener la repetición después de que todas las alertas se han mostrado
       }
       counter += 1;
@@ -153,71 +153,45 @@ function Main() {
     const timerAlert = setTimeout(() => {
       setShowAlert(true);
       playSound(); // Reproducir el sonido
-    }, 7000);
+    }, 1000);
 
     return () => {
-      clearTimeout(timerRocket);
-      clearTimeout(timerFire);
+    //   clearTimeout(timerRocket);
+    //   clearTimeout(timerFire);
       clearTimeout(timerAlert);
     };
   }, [audio]);
 
-  const handleImageChatClick = () => {
-    setIsModalChatOpen(true);
-  };
+   // Estado para rastrear qué ventanas están abiertas
+   const [openWindows, setOpenWindows] = useState([]);
 
-  const handleCloseChatModal = () => {
-    setIsModalChatOpen(false);
-  };
+   // Función para abrir una nueva ventana
+   const openWindow = (name, component) => {
+    setOpenWindows([...openWindows, { name, component }]);
+    };
 
-  const handleImageContractClick = () => {
-    setIsModalContractOpen(true);
+  // Función para cerrar una ventana
+  const closeWindow = (name) => {
+    setOpenWindows(openWindows.filter(window => window.name !== name));
   };
-
-  const handleCloseContractModal = () => {
-    setIsModalContractOpen(false);
-  };
-
-  const handleImageTokenClick = () => {
-    setIsModalTokenOpen(true);
-  };
-
-  const handleCloseTokenModal = () => {
-    setIsModalTokenOpen(false);
-  };
-
-  const handleImageMemeClick = () => {
-    console.log('Open modal meme')
-    setIsModalMemeOpen(true);
-  };
-
-  const handleCloseMemeModal = () => {
-    setIsModalMemeOpen(false);
-    console.log('Close modal meme')
-  };
-
-  const handleImageGameClick = () => {
-    console.log('open modal game')
-    setIsModalGameOpen(true);
-  };
-
-  const handleCloseGameModal = () => {
-    console.log('Close modal game')
-    setIsModalGameOpen(false);
-  };
-
-  // const handleImageMemeClick = () => {
-  //   setModalContent(<Memes handleCloseModal={handleCloseMemeModal} />);
-  //   handleOpenModal();
-  // };
 
   return (
     <div>
       <div className={styles.container}>
-        {showRocket && (
-          <img src={rocket} alt="rocket" className={styles.rocket} />
-        )}
-        {showFire && <img src={fire} alt="fire" className={styles.fire} />}
+      <video id="myVideo" loop muted
+        style={{
+            position: "fixed",
+            width: "100%",
+            left: "50%",
+            top: "50%",
+            height: "100%",
+            objectFit: "cover",
+            transform: "translate(-50%, -50%)",
+            zIndex: "-1"
+        }}
+        >
+            <source src={myvideo} type="video/mp4" />
+        </video>
         {showAlert && (
           <Alert
             message="ARE YOU READY TO BUY IN ATH?"
@@ -250,73 +224,26 @@ function Main() {
             </div>
           </Link>
           <div className={styles.hovers}>
-            <img src={game} alt="" className={styles.icons} onClick={handleImageGameClick} />
+            <img src={game} alt="" className={styles.icons} 
+                onClick={() => openWindow('Juego', Game)} />
             <p className={styles.titulos} >GAMES</p>
           </div>
-          <Modal
-              isOpen={isModalGameOpen}
-              onRequestClose={handleCloseGameModal}
-              contentLabel="Chat Modal"
-              style={{
-                content: {
-                  background: 'transparent',
-                  border: 'none',
-                },
-                overlay: {
-                  backgroundColor: 'transparent',
-                }
-              }}
-              >
-                <Game handleCloseGameModal={handleCloseGameModal} />
-          </Modal>
         </div>
         <div className={styles.containerMini}>
           <div className={styles.hovers}>
-            <img src={meme} alt="" className={styles.icons} onClick={handleImageMemeClick}/>
+            <img src={meme} alt="" className={styles.icons}
+            onClick={() => openWindow('Meme', Memes)}/>
             <p className={styles.titulos} >MEMES</p>
           </div>
-          <Modal
-              isOpen={isModalMemeOpen}
-              onRequestClose={handleCloseMemeModal}
-              contentLabel="Chat Modal"
-              style={{
-                position:'none',
-                content: {
-                  background: 'transparent',
-                  border: 'none',
-                },
-                overlay: {
-                  backgroundColor:'transparent',
-                }
-              }}
-              >
-                <Memes handleCloseMemeModal={handleCloseMemeModal} />
-          </Modal>
           <div className={styles.hovers}>
               <img
                 src={contract}
                 alt=""
                 className={styles.icons}
-                onClick={handleImageContractClick}
+                onClick={() => openWindow('Contrato', Contract)}
               />
               <p className={styles.titulos} >CONTRACT</p>
           </div>
-            <Modal
-              isOpen={isModalContractOpen}
-              onRequestClose={handleCloseContractModal}
-              contentLabel="Chat Modal"
-              style={{
-                content: {
-                  background: 'transparent',
-                  border: 'none',
-                },
-                overlay: {
-                  backgroundColor: 'transparent',
-                }
-              }}
-              >
-                <Contract handleCloseContractModal={handleCloseContractModal} />
-            </Modal>
         </div>
         <div className={styles.containerMini}>
           <div className={styles.hovers}>
@@ -325,47 +252,16 @@ function Main() {
           </div>
           <div className={styles.hovers}>
             <img src={mdos} alt="" className={styles.icons}
-            onClick={handleImageChatClick} />
+            onClick={() => openWindow('Chat Bot', Chat)} />
             <p className={styles.titulos} >CHAT BOT</p>
           </div>
-          <Modal
-            isOpen={isModalChatOpen}
-            onRequestClose={() => setIsModalChatOpen(false)}
-            contentLabel="Chat Modal"
-            style={{
-              content: {
-                background: 'transparent',
-                border: 'none',
-              },
-              overlay: {
-                backgroundColor: 'transparent',
-              }
-            }}
-            >
-            <Chat handleCloseChatModal={handleCloseChatModal}/>
-          </Modal>
         </div>
         <div className={styles.containerMini}>
           <div className={styles.hovers}>
-            <img src={trash} alt="" className={`${styles.icons} ${styles.twitter}`} onClick={handleImageTokenClick}/>
+            <img src={trash} alt="" className={`${styles.icons} ${styles.twitter}`} 
+            onClick={() => openWindow('Token Burn', Tokenburn)}/>
             <p className={styles.titulos} >TOKEN BURN</p>
           </div>
-          <Modal
-              isOpen={isModalTokenOpen}
-              onRequestClose={handleCloseTokenModal}
-              contentLabel="Chat Modal"
-              style={{
-                content: {
-                  background: 'transparent',
-                  border: 'none',
-                },
-                overlay: {
-                  backgroundColor: 'transparent',
-                }
-              }}
-              >
-                <Tokenburn handleCloseTokenModal={handleCloseTokenModal} />
-          </Modal>
           <Link to='https://twitter.com/'>
             <div>
               <img
@@ -378,13 +274,16 @@ function Main() {
             </div>
           </Link>
         </div>
+        {openWindows.map((window, index) => (
+        <Window key={index} name={window.name} component={window.component} closeHandler={() => closeWindow(window.name)} />
+      ))}
         </div>
       <Nav handlePlay={handlePlay}  handleStop={handleStop} 
-        openModalToken={handleImageTokenClick} 
-        openModalGame={handleImageGameClick} 
-        openModalChat={handleImageChatClick}
-        openModalMemes={handleImageMemeClick}
-        openModalContract={handleImageContractClick} 
+        openModalToken={() => openWindow('Token Burn', Tokenburn)} 
+        openModalGame={() => openWindow('Juego', Game)} 
+        openModalChat={() => openWindow('Chat Bot', Chat)}
+        openModalMemes={() => openWindow('Meme', Memes)}
+        openModalContract={() => openWindow('Contrato', Contract)} 
         twitter={twitter}
         telegram={telegram}
         meme={meme}
@@ -393,6 +292,7 @@ function Main() {
         mdos={mdos}
         trash={trash}
         game={game}
+        closeWindow={closeWindow}
       />
     
     </div>
