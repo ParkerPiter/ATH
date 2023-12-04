@@ -4,7 +4,7 @@ import '../../../windows-95-ui-kit/css/w95.css'
 import botAvatar from '../../assets/Imagen1.png'
 import Draggable from 'react-draggable';
 
-const Chat = ({handleCloseChatModal}) =>{
+const Chat = ({closeHandler}) =>{
     const [messages, setMessages] = useState([{
         text: `Hello, crypto adventurer! Ready to buy at ATH without fear of falling? I'll
         be your guide in the exciting world of ATH, where buying at the top is just the
@@ -51,7 +51,7 @@ const Chat = ({handleCloseChatModal}) =>{
                 <path d="M.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5zM1 5V2h14v3zm0 1h14v8H1z"/>
               </svg>
             </button>
-            <button onClick={handleCloseChatModal} className="btn btn-primary" style={{marginRight:'-2px', padding:'5px'}}>
+            <button onClick={closeHandler} className="btn btn-primary" style={{marginRight:'-2px', padding:'5px'}}>
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
               </svg>

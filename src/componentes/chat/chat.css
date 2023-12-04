@@ -4,6 +4,7 @@
   position: absolute;
   max-width: 35%;
   left: 770px;
+  transform: translate(-312px, -472px);
 }
 
 .bg-custom{

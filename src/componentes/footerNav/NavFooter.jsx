@@ -105,7 +105,7 @@ const Nav = ({
           <p
             className={`${style.start} btn`}
             style={{
-              paddingRight: "30px",
+              paddingRight: "5px",
               marginTop: "-0.5px",
               marginBottom: "-2px",
             }}

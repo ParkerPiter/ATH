@@ -1,6 +1,6 @@
 .footer {
   background-color: gray;
-  height: 41px;
+  height: 41px !important;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -10,12 +10,27 @@
   position: relative; /* o absolute, fixed, o sticky */
   z-index: 1000; /* cualquier número alto */
 }
+
+/* Aumenta la altura del pie de página para pantallas grandes */
+@media (min-width: 768px) {
+  .footer {
+    height: 60px;
+  }
+}
+
+/* Aumenta aún más la altura del pie de página para pantallas aún más grandes */
+@media (min-width: 1024px) {
+  .footer {
+    height: 80px;
+  }
+}
+
 .start {
   position: relative;
   margin-top: -34px;
   width: 35px;
   height: 24px;
-  padding-right: 4px;
+  padding: 0px;
   text-align: left;
   border-right: 2px solid rgb(29, 28, 28);
   border-bottom: 2px solid rgb(29, 28, 28);
@@ -77,12 +92,6 @@
   margin: 0px 5px -5px -40px;
 }
 @media only screen and (min-width: 1650px) {
-  .footer{
-    height: 60px;
-  }
-  .sinMargin{
-
-  }
   .start {
     position: absolute;
     width: 35px;
