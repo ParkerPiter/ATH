@@ -10,7 +10,7 @@ import save from '../../assets/artage-io-48132_1701290409.png'
 
 import Draggable from 'react-draggable';
 
-const Contract = ({handleCloseContractModal}) =>{
+const Contract = ({closeHandlerl}) =>{
 
     //Terminos editables del contrato:
     const terminos_Contract= 'Terminos y condiciones del contrato: Curabitur interdum eu mi a sollicitudin. Nulla tristique hendrerit pretium. Integer tempus sagittis enim at finibus. Vestibulum sed ultricies turpis, a iaculis ante. Praesent aliquet aliquam ante eu mattis. Donec molestie, odio vel lobortis auctor, nunc diam ultricies augue, molestie porta sem arcu ac dui. Pellentesque in ultrices enim, ut vehicula ante. Nullam in condimentum nisi estoy al limite del contrato'
@@ -32,7 +32,7 @@ const Contract = ({handleCloseContractModal}) =>{
                         <path d="M.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5zM1 5V2h14v3zm0 1h14v8H1z"/>
                     </svg>
                     </button>
-                    <button onClick={handleCloseContractModal} className="btn btn-primary" style={{marginRight:'-2px', padding:'5px'}}>
+                    <button onClick={closeHandler} className="btn btn-primary" style={{marginRight:'-2px', padding:'5px'}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                     </svg>
