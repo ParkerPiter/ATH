@@ -149,3 +149,39 @@ body {
   font-weight: bold;
   margin-top: -10px;
 }
+
+.containMessageBot{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 1150px;
+  top: 640px;
+  background-color: white;
+  width: 160px;
+  border-radius: 10px;
+  height: 40px;
+  color: black;
+  cursor: pointer;
+}
+.containMessageBot img {
+  position: relative;
+  width: 80px;
+  left: 175px;
+  top: -53px;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid #989898;
+}
+.containMessageBot p {
+  margin-left: 20px;
+}
+.flechita{
+  position: relative;
+  top: -8px;
+  transform: rotate(10deg) ;
+  left: 150px;
+  width: 30px;
+  height: 10px;
+  background-color: white;
+  border-top-right-radius: 100%;
+}

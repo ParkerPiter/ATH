@@ -4,7 +4,7 @@ import style from "./NavFooter.module.css";
 import on from "../../assets/musicon.png";
 import off from "../../assets/musicoff.png";
 import useSound from "use-sound";
-import musica from "../../assets/Song_ath_WEB.MP3"
+// import musica from "../../assets/Song_ath_WEB.MP3"
 
 const Nav = ({
   handlePlay,
@@ -101,8 +101,8 @@ const Nav = ({
 
   return (
       <div className={style.footer}>
-        <div className={style.sinMargin}>
-          <p
+        <div>
+          <div
             className={`${style.start} btn`}
             style={{
               paddingRight: "5px",
@@ -117,8 +117,8 @@ const Nav = ({
               alt="windows-95"
               onClick={handleStartClick}
             />
-            Start
-          </p>
+            <p>Start</p>
+          </div>
           {isAccordionOpen && (
             <div
               className={style.optionList}

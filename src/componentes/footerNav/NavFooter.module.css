@@ -11,8 +11,8 @@
   z-index: 1000; /* cualquier número alto */
 }
 .start {
-  position: relative;
-  margin-top: -34px;
+  position: absolute;
+  /* margin-top: -34px; */
   width: 35px;
   height: 24px;
   padding-right: 4px;
@@ -22,7 +22,18 @@
   border-left: 2px solid rgb(142, 141, 141);
   border-top: 2px solid rgb(142, 141, 141);
 }
+.start p{
+  position:relative;
+  top: -43px;
+  left: -15px;
+  font-size: 15px;
+}
 
+.win {
+  width: 25px;
+  height: 25px;
+  margin: 0px 5px -5px -50px;
+}
 .clock {
   display: flex;
   flex-direction: row;
@@ -67,27 +78,23 @@
   width: 25px;
   height: 25px;
 }
-.win {
-  width: 25px;
-  height: 25px;
-  margin: 0px 5px -5px -40px;
-}
 @media only screen and (min-width: 1650px) {
   .footer{
-    height: 60px;
+    height: 84px;
   }
-  .sinMargin{
-
+  .start{
+    width: 80px;
+    height: 46px;
   }
-  .start {
-    position: absolute;
-    width: 35px;
-    height: 50px;
-    padding-left: -20px;
+  .start p {
+    font-size: 25px;
+    top: -78px;
   }
   .win {
     width: 45px;
     height: 45px;
+    margin-left: -75px;
+    margin-top: -3px;
   }
   .clock {
     font-size: 20px;

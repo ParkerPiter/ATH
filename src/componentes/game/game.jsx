@@ -2,7 +2,7 @@ import '../../../windows-95-ui-kit/css/w95.css'
 import './game.css'
 import Draggable from 'react-draggable'
 
-const Game = ({closeHandlerl})=>{
+const Game = ({closeHandler})=>{
     return(
         <Draggable>
             <div className='card card-tertiary container-chat'>
