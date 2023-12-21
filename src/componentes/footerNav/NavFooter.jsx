@@ -27,7 +27,6 @@ const Nav = ({
   const [time, setTime] = useState(new Date());
 
   const handleStartClick = () => {
-    console.log('open start..')
     setIsAccordionOpen(!isAccordionOpen);
   };
 
@@ -101,12 +100,12 @@ const Nav = ({
 
   return (
       <div className={style.footer}>
-        <div className={style.sinMargin}>
-          <p
+        <div >
+          <div
             className={`${style.start} btn`}
             style={{
               paddingRight: "5px",
-              marginTop: "-0.5px",
+              marginTop: "2px",
               marginBottom: "-2px",
             }}
             onClick={handleStartClick}
@@ -117,8 +116,8 @@ const Nav = ({
               alt="windows-95"
               onClick={handleStartClick}
             />
-            Start
-          </p>
+            <p>Start</p>
+          </div>
           {isAccordionOpen && (
             <div
               className={style.optionList}

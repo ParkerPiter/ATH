@@ -4,7 +4,6 @@
   position: absolute;
   max-width: 35%;
   left: 770px;
-  transform: translate(-312px, -472px);
 }
 
 .bg-custom{
@@ -100,9 +99,13 @@
   border-color: #f0f0f0 transparent transparent transparent;
 }
 
-@media only screen and (min-width: 1650px) {
+.quest:hover{
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1600px) {
   .container-chat {
-    max-width: 100%;
+    width: 80%;
   }
   .botAvatar {
     width: 75px;

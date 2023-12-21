@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import './chat.css'
 import '../../../windows-95-ui-kit/css/w95.css'
 import botAvatar from '../../assets/Imagen1.png'
 import Draggable from 'react-draggable';
 
-const Chat = ({closeHandler}) =>{
+const Chat = ({ name, closeHandler, showBotMessage, setShowBotMessage}) =>{
     const [messages, setMessages] = useState([{
         text: `Hello, crypto adventurer! Ready to buy at ATH without fear of falling? I'll
         be your guide in the exciting world of ATH, where buying at the top is just the
@@ -15,8 +15,10 @@ const Chat = ({closeHandler}) =>{
 
     const handleOptionClick = async (option) => {
       setSelectedOption(option);
-      //const response = await fetch('http://localhost:3000/chat', {
-        const response = await fetch('https://ath-server.vercel.app0/chat', {
+      const response = await fetch('http://localhost:3000/chat', {
+      //const response = await fetch('https://ath-server.vercel.app0/chat', {
+        // const response = await fetch('http://ath-community.preview-domain.com/chat', {
+          
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -26,16 +28,16 @@ const Chat = ({closeHandler}) =>{
       const data = await response.json();
       let messageText = data.message;
     if (option === '5') {
-        messageText += ' <a href="www.dexscreener.com/ourpair">Click for details</a>';
+        messageText += ' <a href="www.dexscreener.com/ourpair"  target="_blank" rel="noopener noreferrer">Click for details</a>';
     }
     if (option === '2'){
-      messageText += '<a href="#telegram"> Telegram</a> <a href="#twitter">Twitter</a>';
+      messageText += '<a href="#telegram" target="_blank" rel="noopener noreferrer"> Telegram</a> <a href="#twitter"  target="_blank" rel="noopener noreferrer">Twitter</a>';
     }
     setMessages([{ text: messageText, from: 'bot' }]);
   };
 
   return (
-    <Draggable>
+    <Draggable defaultPosition={{x: -1, y: -350}}>
     <div className='card card-tertiary container-chat'>
       <div className='card-header headerMedia' style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginRight:'2px', padding:'0px 4px'}}>
           <h2 style={{fontSize:'12px'}}>ATH CHAT</h2>
@@ -51,7 +53,12 @@ const Chat = ({closeHandler}) =>{
                 <path d="M.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5zM1 5V2h14v3zm0 1h14v8H1z"/>
               </svg>
             </button>
-            <button onClick={closeHandler} className="btn btn-primary" style={{marginRight:'-2px', padding:'5px'}}>
+            <button onClick={()=>{closeHandler();
+              if (name != 'Chat bot'){
+                setTimeout(() => {
+                  setShowBotMessage(true)
+                }, 2000);
+              }}} className="btn btn-primary" style={{marginRight:'-2px', padding:'5px'}}>
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
               </svg>

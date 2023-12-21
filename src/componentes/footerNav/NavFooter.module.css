@@ -1,55 +1,55 @@
 .footer {
   background-color: gray;
-  height: 41px !important;
+  height: 5.6vh;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 4px 15px 0px 15px;
   color: black;
-  position: relative; /* o absolute, fixed, o sticky */
+  position: fixed; /* o absolute, fixed, o sticky */
   z-index: 1000; /* cualquier número alto */
+  border-top: solid 2px rgb(214, 214, 214);
+  bottom: 0;
+  width: 100%;
 }
-
-/* Aumenta la altura del pie de página para pantallas grandes */
-@media (min-width: 768px) {
-  .footer {
-    height: 60px;
-  }
-}
-
-/* Aumenta aún más la altura del pie de página para pantallas aún más grandes */
-@media (min-width: 1024px) {
-  .footer {
-    height: 80px;
-  }
-}
-
 .start {
-  position: relative;
-  margin-top: -34px;
-  width: 35px;
-  height: 24px;
-  padding: 0px;
+  position: absolute;
+  width: 15%;
+  height: 35%;
+  padding:5px 25px 5px 65px !important;
   text-align: left;
-  border-right: 2px solid rgb(29, 28, 28);
-  border-bottom: 2px solid rgb(29, 28, 28);
-  border-left: 2px solid rgb(142, 141, 141);
-  border-top: 2px solid rgb(142, 141, 141);
+  border-right: 2px solid rgb(29, 28, 28) !important;
+  border-bottom: 2px solid rgb(29, 28, 28) !important;
+  border-left: 2px solid rgb(142, 141, 141)!important ;
+  border-top: 2px solid rgb(142, 141, 141) !important;
+  margin-top: -0.5% !important;
+}
+.start p{
+  position:relative;
+  bottom: 37px;
+  left: -15px;
+  font-size: 15px;
 }
 
+.win {
+  width: 100%;
+  height: 100%;
+  margin: 0px 5px -5px -55px;
+}
 .clock {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 2px;
-  width: 130px;
-  height: 30px;
+  width: 12%;
+  height: 74%;
   padding-right: 4px;
-  border-right: 2px solid rgb(142, 141, 141);
-  border-bottom: 2px solid rgb(142, 141, 141);
+  border-right: 2px solid rgb(240, 240, 240) ;
+  border-bottom: 2px solid rgb(240, 240, 240);
   border-left: 2px solid rgb(29, 28, 28);
   border-top: 2px solid rgb(29, 28, 28);
+  margin-right: 2%;
 }
 .clock img {
   margin-left: 3px;
@@ -57,95 +57,47 @@
 .clock p{
   font-size: 14px;
   position: relative;
-  
+  bottom: 50%;
 }
 .soundIcons{
   display: flex;
   flex-direction: row;
   justify-content:flex-start;
 }
-.timer{
-  display: flex;
-  top: -13px;
-}
 /*Icono de audio*/
 .audioOn {
   /* position: absolute; */
-  width: 25px;
-  height: 25px;
+  width: 45%;
+  height: 80%;
 }
 
 .on1 {
   margin-right: -28px;
-
 }
 
 .off {
   position: relative;
   left: 24px;
-  width: 25px;
-  height: 25px;
+  width: 45%;
+  height: 80%;
 }
-.win {
-  width: 25px;
-  height: 25px;
-  margin: 0px 5px -5px -40px;
-}
-@media only screen and (min-width: 1650px) {
-  .start {
-    position: absolute;
-    width: 35px;
-    height: 50px;
-    padding-left: -20px;
-  }
-  .win {
-    width: 45px;
-    height: 45px;
-  }
-  .clock {
-    font-size: 20px;
-    width: 220px;
-    height: 50px;
-    margin-bottom: 4px;
-  }
-  .clock p{
-    font-size: 20px;
-  }
-  .audioOn {
-    width: 45px;
-    height: 45px;
-  }
 
-  .on1 {
-    /* margin-right: -15px; */
-  }
-  .on2 {
-    /* top: 575px;
-    right: 55px; */
-  }
-
-  .off {
-    left: 40px;
-    width: 45px;
-    height: 45px;
-  }
-}
 .optionList li {
   list-style: none;
-  margin-left: 5px;
+  margin-left: 0%;
   margin-right: -15px;
   font-size: 15px;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 .optionList {
-  margin-bottom: -15px;
+  margin-bottom: -1.2%;
 }
 .barraGris {
   content: "";
-  width: 25px;
+  width: 12%;
   background: linear-gradient(rgb(16, 132, 208), rgb(0, 0, 128));
   position: absolute;
-  height: 347px;
+  height: 95%;
   bottom: 2px;
   left: -12px;
   margin: 0px;
@@ -170,4 +122,179 @@
   top: 15px;
   text-align: left;
   margin-bottom: -25px;
+}
+
+/* Responsivo */
+@media (min-width: 1600px) {
+  .footer {
+    background-color: gray;
+    height: 4.8vh;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2px 15px 0px 15px;
+    color: black;
+    position: fixed; /* o absolute, fixed, o sticky */
+    z-index: 1000; /* cualquier número alto */
+    border-top: solid 2px rgb(214, 214, 214);
+    bottom: 0;
+    width: 100%;
+  }
+  .start {
+    position: absolute;
+    width: 35%;
+    height: 55%;
+    text-align: left;
+    border-right: 2px solid rgb(29, 28, 28) !important;
+    border-bottom: 2px solid rgb(29, 28, 28) !important;
+    border-left: 2px solid rgb(142, 141, 141)!important ;
+    border-top: 2px solid rgb(142, 141, 141) !important;
+  }
+  .start p{
+    position:relative;
+    bottom: 180%;
+    left: 0%;
+    font-size: 18px;
+  }
+  
+  .win {
+    width: 65%;
+    height: 100%;
+    margin: 0px 0px -5px -55px;
+  }
+  .clock {
+    display: flex;
+    margin-right: 1.5%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2px;
+    width: 9%;
+    height: 74%;
+    padding-right: 4px;
+    border-right: 2px solid rgb(240, 240, 240) ;
+    border-bottom: 2px solid rgb(240, 240, 240);
+    border-left: 2px solid rgb(29, 28, 28);
+    border-top: 2px solid rgb(29, 28, 28);
+  }
+  .clock img {
+    margin-left: 10%;
+    margin-top: 8%;
+  }
+  .clock p{
+    margin-top: 11%;
+    font-size: 18px;
+    position: relative;
+    margin-right: 2%;
+  }
+  .soundIcons{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+
+  }
+  /*Icono de audio*/
+  .audioOn {
+    /* position: absolute; */
+    width: 45%;
+    height: 80%;
+  }
+
+  .audioOn:hover{
+    cursor: pointer;
+  }
+  
+  .off {
+    position: relative;
+    left: 45%;
+    width: 45%;
+    height: 80%;
+  }
+
+  .off:hover{
+    cursor: pointer;
+  }
+  
+  .optionList li {
+    list-style: none;
+    margin-left: 0%;
+    margin-right: -15px;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .optionList {
+    margin-bottom: -0.6%;
+  }
+  .barraGris {
+    content: "";
+    width: 12%;
+    background: linear-gradient(rgb(16, 132, 208), rgb(0, 0, 128));
+    position: absolute;
+    height: 95%;
+    bottom: 2px;
+    left: -12px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .borderAccor {
+    /* border-top: 3px solid #605e5e; */
+    border-left: 3px solid #beb9b9;
+    border-right: 3px solid #605e5e;
+    border-bottom: 3px solid #beb9b9;
+  }
+  
+  .ath {
+    transform: rotate(-90deg);
+    color: white;
+    position: absolute;
+    left: -20px;
+    font-size: 15px;
+    top: 15px;
+    text-align: left;
+    margin-bottom: -25px;
+  }
+}
+
+@media  (max-width: 1000px) {
+  .clock p{
+    font-size: 16px;
+    bottom: 35%;
+  }
+  .clock{
+    width: 21%;
+    margin-right: 4%;
+  }
+  .optionList {
+    margin-bottom: -0.3%;
+  }
+  .clock img {
+    margin-left: 12%;
+    margin-top: 5%;
+  }
+  /*Icono de audio*/
+  .audioOn {
+    width: 100%;
+    height: 80%;
+  }
+
+  .off {
+    left: 55%;
+  }
+
+  .start {
+    width: 45%;
+    height: 55%;
+    padding: 5px 25px 5px 65px;
+  }
+  .start p{
+    /* position:relative;*/
+    bottom: 165%;
+    left: 5%;
+    font-size: 18px; 
+  }
+  .win {
+    width: 65%;
+    height: 100%;
+    margin: 0px 0px -5px -65px;
+  }
 }

@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Media
+src/assets/VideoBackwebActualizacion.mp4
+src/assets/Fondo_Web_ATH.mov
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -23,5 +28,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Media
-src/assets/VideoBackwebAtualización.mp4

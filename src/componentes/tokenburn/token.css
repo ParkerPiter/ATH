@@ -19,12 +19,17 @@
     justify-content: center;
     padding: 45px;
 }
-@media only screen and (min-width: 1650px) {
+@media (min-width: 1600px) {
     .container-token{
-        width: 80%;
+        width: 40%;
     }
-    
+    .card-body{
+        padding: 25px !important;
+    }
     .token-body{
+        font-size: 22px;
+    }
+    .text-token{
         font-size: 22px;
     }
 }
