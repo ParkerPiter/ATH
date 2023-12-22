@@ -205,7 +205,6 @@ function Main() {
       }
     };
 
-
   // Función para cerrar una ventana
   const closeWindow = (name) => {
     setOpenWindows(openWindows.filter(window => window.name !== name));

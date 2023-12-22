@@ -18,7 +18,6 @@ const Chat = ({ name, closeHandler, showBotMessage, setShowBotMessage}) =>{
       const response = await fetch('http://localhost:3000/chat', {
       //const response = await fetch('https://ath-server.vercel.app0/chat', {
         // const response = await fetch('http://ath-community.preview-domain.com/chat', {
-          
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

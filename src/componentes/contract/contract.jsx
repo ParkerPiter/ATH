@@ -58,3 +58,4 @@ const Contract = ({closeHandler}) =>{
 }
 
 export default Contract;
+

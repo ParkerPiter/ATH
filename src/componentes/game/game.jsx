@@ -36,3 +36,4 @@ const Game = ({closeHandler})=>{
 }
 
 export default Game;
+
