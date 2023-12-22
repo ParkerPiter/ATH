@@ -1,0 +1,269 @@
+[33mcommit 951f3b733af6c4d1ef953e1200ac48c98269c54f[m[33m ([m[1;36mHEAD -> [m[1;32mgabo[m[33m)[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Thu Dec 21 15:38:45 2023 -0400
+
+    prueba de subida
+
+[33mcommit 7a0ce53129f63ca80a55f6549f839fb2da53dd56[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Thu Dec 21 13:04:48 2023 -0400
+
+    prueba de subida
+
+[33mcommit 01c98fc1f8d49af5afa227a770f945426bea200f[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Thu Dec 21 12:59:04 2023 -0400
+
+    Proyecto terminado
+
+[33mcommit e744ecdde3467bd18dd432139a6c2ff5edafcedb[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Thu Dec 21 11:43:14 2023 -0400
+
+    ATH finalizado
+
+[33mcommit 21f1a1e966bb1de6fdac156b49a1cfff1adb2b0b[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Mon Dec 4 15:26:26 2023 -0400
+
+    sin video
+
+[33mcommit 4d142876dbdc56ca4494ddc83633a6b25a895133[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Mon Dec 4 15:23:22 2023 -0400
+
+    intento subir sin video
+
+[33mcommit a1677ba4c47c0490254bbdd6351275616de3081a[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Mon Dec 4 15:07:16 2023 -0400
+
+    cambios sin video
+
+[33mcommit 07bad76c991866a5309df8d9b2822c9fa4552268[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Mon Dec 4 15:02:09 2023 -0400
+
+    cambios casi terminados sin video
+
+[33mcommit 7f5cf62f685d1fea5d7b47fd5b16a11c4b0e2437[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Sun Dec 3 17:51:47 2023 -0400
+
+    sin el video
+
+[33mcommit 4b55a1dd6f92e5826b10a72aa155f20a09aa0815[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Sat Dec 2 18:17:25 2023 -0400
+
+    falta adaptar iconos y navbar a tamaños grandes
+
+[33mcommit 36eff2c6b14a3de0b64380320ab32d23c0bad7c9[m
+Merge: e258576 f548242
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Fri Dec 1 21:50:36 2023 -0400
+
+    ultimos cambios con jesus
+
+[33mcommit e258576a92808c4d3f003190063fb2533c829afc[m
+Merge: 7971ed5 448e085
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Fri Dec 1 21:35:04 2023 -0400
+
+    Merge branch 'main' of https://github.com/ParkerPiter/ATH into gabo
+
+[33mcommit f54824214f5e35f54e52c0a9241e2cbb3c48167d[m
+Author: jesus bavaresco <jesusbavaresco@gmail.com>
+Date:   Fri Dec 1 19:33:26 2023 -0600
+
+    cambios varios
+
+[33mcommit 7971ed5a715ebb9ae5c6b9cf02fc58fc56fba2a7[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Fri Dec 1 21:32:50 2023 -0400
+
+    ultimos cambios con jesus
+
+[33mcommit 448e0850416449c0ac7cf1f32b5fbdab4b0b85b2[m
+Author: Gabriel Alejandro Leal <68304965+ParkerPiter@users.noreply.github.com>
+Date:   Thu Nov 30 22:57:49 2023 -0400
+
+    Update Chat.jsx
+
+[33mcommit 7de52b675675cf0ed5f9499d69bf7ec8b1dc21db[m
+Merge: f5b35f0 10a07bb
+Author: Gabriel Alejandro Leal <68304965+ParkerPiter@users.noreply.github.com>
+Date:   Thu Nov 30 22:56:12 2023 -0400
+
+    Merge pull request #24 from ParkerPiter/gabo
+    
+    Gabo
+
+[33mcommit 10a07bba99a6995ebe579c7c30ddb662dab65801[m
+Merge: b19c77f f5b35f0
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Thu Nov 30 22:55:08 2023 -0400
+
+    Proyecto casi concluido a espera de revision
+
+[33mcommit b19c77f5fa104ea7e4a88ee6aa56eebde24cad0a[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Thu Nov 30 21:54:27 2023 -0400
+
+    enu
+
+[33mcommit f5b35f035113877694947d46d8b3f334d9dac8ab[m
+Author: jesus bavaresco <jesusbavaresco@gmail.com>
+Date:   Thu Nov 30 19:47:57 2023 -0600
+
+    stylos del accordion listos
+
+[33mcommit 5a2074b7c7a3e2bf0776cf624cbf19db503735a0[m
+Merge: 90fdb18 68bd75c
+Author: Gabriel Alejandro Leal <68304965+ParkerPiter@users.noreply.github.com>
+Date:   Thu Nov 30 20:21:45 2023 -0400
+
+    Merge pull request #23 from ParkerPiter/gabo
+    
+    window de games listo y parte del start hecho
+
+[33mcommit 68bd75ccfcab2e23ca126cc815523466929905d3[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Thu Nov 30 20:20:07 2023 -0400
+
+    window de games listo y parte del start hecho
+
+[33mcommit 90fdb18b1f3a64da19df7afbe9c2c57501d4ae77[m
+Merge: 12a2d12 2eff6fb
+Author: Gabriel Alejandro Leal <68304965+ParkerPiter@users.noreply.github.com>
+Date:   Thu Nov 30 01:26:34 2023 -0400
+
+    Merge pull request #22 from ParkerPiter/gabo
+    
+    fondo negro a las windows
+
+[33mcommit 2eff6fbcc51694c548862cb583613903be78770a[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Thu Nov 30 01:25:43 2023 -0400
+
+    fondo negro a las windows
+
+[33mcommit 12a2d122b8698c227d0ee29610aa2e38d729832d[m
+Merge: c9edcfb 51b6299
+Author: Jesus Bavaresco <jesusbavaresco@gmail.com>
+Date:   Wed Nov 29 22:04:32 2023 -0600
+
+    Merge pull request #21 from ParkerPiter/jesus
+    
+    botones de alert y message un poco mas grande
+
+[33mcommit 51b62997809c346d16e3c11ea143bbda200f4405[m
+Author: jesus bavaresco <jesusbavaresco@gmail.com>
+Date:   Wed Nov 29 22:01:34 2023 -0600
+
+    botones de alert y message un poco mas grande
+
+[33mcommit c9edcfb8c88808844d238560200be99e37d0e768[m
+Merge: cc2fe5b a30d465
+Author: Jesus Bavaresco <jesusbavaresco@gmail.com>
+Date:   Wed Nov 29 21:42:39 2023 -0600
+
+    Merge pull request #20 from ParkerPiter/jesus
+    
+    tamaño de los modals a partir de 1650px
+
+[33mcommit a30d465206fc7ed33b5d2d817dc73f9ca7ca831f[m
+Author: jesus bavaresco <jesusbavaresco@gmail.com>
+Date:   Wed Nov 29 21:40:49 2023 -0600
+
+    tamano de los modals a partir de 1650px
+
+[33mcommit cc2fe5be654f55e61c478a2eb329be56e2a16893[m
+Merge: 24e6742 d074017
+Author: Gabriel Alejandro Leal <68304965+ParkerPiter@users.noreply.github.com>
+Date:   Wed Nov 29 19:20:17 2023 -0400
+
+    Merge pull request #19 from ParkerPiter/gabo
+    
+    Gabo
+
+[33mcommit d074017455edb5027d2ad003a2fd41de5fa1bf6f[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Wed Nov 29 19:01:52 2023 -0400
+
+    memes listos
+
+[33mcommit 5b7dc83e41d71ceb38bfd1074f5e6a4bde7e9f73[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Wed Nov 29 18:28:52 2023 -0400
+
+    msdos, chatbot y token burn listos para ser adaptados
+
+[33mcommit 32229bdad9470219a57b4593482f74fa55e4b8d7[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Wed Nov 29 00:23:25 2023 -0400
+
+    pequeños cambios al bot y botones al contract
+
+[33mcommit 24e674212cc39c8857376e6024d854c301fcfa52[m
+Merge: c52451e f02df6c
+Author: Jesus Bavaresco <jesusbavaresco@gmail.com>
+Date:   Tue Nov 28 18:27:32 2023 -0600
+
+    Merge pull request #18 from ParkerPiter/jesus
+    
+    Cambios martes
+
+[33mcommit f02df6c9bc33dfb32943b2783bae0f69f473e662[m
+Author: jesus bavaresco <jesusbavaresco@gmail.com>
+Date:   Tue Nov 28 18:25:46 2023 -0600
+
+    Cambios martes
+
+[33mcommit c52451e19e72f5f68783f60c3f7d2a5c46c8b1ab[m
+Merge: 357018a 5b22de5
+Author: Gabriel Alejandro Leal <68304965+ParkerPiter@users.noreply.github.com>
+Date:   Tue Nov 28 18:40:01 2023 -0400
+
+    Merge pull request #17 from ParkerPiter/gabo
+    
+    Cambios en las ventanas terminadas que se pueden mover
+
+[33mcommit 5b22de596fb24c97c7a86fe675f75b4cd5d49fc2[m
+Author: ParkerPiter <gabriel.gaboz123@gmail.com>
+Date:   Tue Nov 28 18:38:38 2023 -0400
+
+    Cambios en las ventanas terminadas que se pueden mover
+
+[33mcommit 357018ab63b250976e80c75dbe557496bcf29222[m
+Merge: a60ab3c 5e8ffdc
+Author: Jesus Bavaresco <jesusbavaresco@gmail.com>
+Date:   Tue Nov 28 16:29:56 2023 -0600
+
+    Merge pull request #16 from ParkerPiter/jesus
+    
+    mediaquerys en alert
+
+[33mcommit 5e8ffdca2a970ed2cdba6c91e4e81143476f470c[m
+Author: jesus bavaresco <jesusbavaresco@gmail.com>
+Date:   Tue Nov 28 16:28:35 2023 -0600
+
+    mediaquerys en alert
+
+[33mcommit a60ab3c6b7cb20264548751812bd203b4595c917[m
+Author: Gabriel Alejandro Leal <68304965+ParkerPiter@users.noreply.github.com>
+Date:   Tue Nov 28 17:32:39 2023 -0400
+
+    Update .gitmodules
+
+[33mcommit c4af1650d06b7281c628afdd3087badcefe4f8ae[m
+Merge: eedf02a 776fb26
+Author: Gabriel Alejandro Leal <68304965+ParkerPiter@users.noreply.github.com>
+Date:   Tue Nov 28 17:30:11 2023 -0400
+
+    Merge pull request #15 from ParkerPiter/gabo
+    
+    git modules para el uso del kit
+
+[33mcommit 776fb26ea3fdbcd7ef0c3656127fea66569c3d44[m
+Author: ParkerPiter <gab

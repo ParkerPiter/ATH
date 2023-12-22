@@ -2,9 +2,9 @@ import '../../../windows-95-ui-kit/css/w95.css'
 import './game.css'
 import Draggable from 'react-draggable'
 
-const Game = ({closeHandlerl})=>{
+const Game = ({closeHandler})=>{
     return(
-        <Draggable>
+        <Draggable defaultPosition={{x: -300, y: -300}}>
             <div className='card card-tertiary container-chat'>
                 <div className='card-header headerMedia' style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginRight:'2px', padding:'0px 4px'}}>
                     <h2 style={{fontSize:'12px'}}>GAME</h2>
@@ -28,7 +28,7 @@ const Game = ({closeHandlerl})=>{
                     </div>
                 </div>
                 <div className="card-body bg-custom">
-                    <h2 style={{padding:'25px'}}>Coming soon</h2>
+                    <h2 style={{padding:'25px', textAlign:'center'}}>Coming soon</h2>
                 </div>
             </div>
         </Draggable>
@@ -36,3 +36,4 @@ const Game = ({closeHandlerl})=>{
 }
 
 export default Game;
+

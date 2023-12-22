@@ -89,7 +89,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  margin-left: 50px;
+  margin-left: 35%;
 }
 .btn {
   background-color: #8f8a89;
@@ -124,7 +124,7 @@
   border-radius: 4px;
   font-size: 14px;
 } */
-@media only screen and (min-width: 1650px) {
+@media only screen and (min-width: 1600px) {
   .alert img {
     width: 70%;
   }
@@ -144,8 +144,8 @@
   .alert-actions {
     display: flex;
     justify-content: space-between;
-    margin-top: 45px;
-    margin-left: 90px;
+    margin-top: 15%;
+    margin-left: 65%;
   }
   .btn {
     background-color: #8f8a89;

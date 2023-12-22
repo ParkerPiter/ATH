@@ -14,7 +14,7 @@ const Alert = ({ message, buttons, position }) => {
           <div className="overlay-text">
             <div className="alert-actions">
               {buttons?.map((button, index) => (
-                <button className='btn' key={index} onClick={() => button.onClick()}>
+                <button className='btn padding' key={index} onClick={() => button.onClick()}>
                   {button.name}
                 </button>
               ))}

@@ -17,7 +17,7 @@ const Memes = ({closeHandler}) =>{
       ]
 
     return(
-        <Draggable>
+        <Draggable defaultPosition={{x: 80, y: -420}}>
             <div className='card card-tertiary container-memes' >
             <div className='card-header scroll' style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginRight:'2px', padding:'0px 4px'}}>
                     <h2 style={{fontSize:'12px'}}>MEMES</h2>
